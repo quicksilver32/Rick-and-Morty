@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/cards.css" />
     <link href="http://fonts.cdnfonts.com/css/krona-one" rel="stylesheet" />
     <title>Rick and Morty</title>
   </head>
@@ -16,28 +17,237 @@
         </div>
         <nav class="nav-container">
           <a class="nav-link" href="characters.html">CHARACTERS</a>
-          <a class="nav-link" href="locations.html">LOCATIONS</a>
+          <a class="nav-link nav-link-selected" href="#">LOCATIONS</a>
           <a class="nav-link" href="episodes.html">EPISODES</a>
         </nav>
       </div>
     </header>
     <main>
-      <p class="main-text">
-        The Rick and Morty API is a REST API based on the television show Rick
-        and Morty. You will have access to about hundreds of characters, images,
-        locations and episodes. The Rick and Morty API is filled with canonical
-        information as seen on the TV show.
-      </p>
-      <img class="main-img" src="images/main-img.png" alt="logo" />
+      <div class="filters">
+        <p class="filter-name">Type:</p>
+        <div class="filter-container">
+          <p class="filter-value">Spa</p>
+          <p class="filter-value">Woods</p>
+          <p class="filter-value">Microverse</p>
+          <p class="filter-value">Dream</p>
+          <p class="filter-value">Quasar</p>
+          <p class="filter-value">Reality</p>
+          <p class="filter-value">Arcade</p>
+          <p class="filter-value">Hell</p>
+          <p class="filter-value">Human</p>
+          <p class="filter-value">Consciousness</p>
+          <p class="filter-value">Miniverse</p>
+          <p class="filter-value">Game</p>
+          <p class="filter-value">Country</p>
+          <p class="filter-value">Memory</p>
+          <p class="filter-value">Dimension</p>
+          <p class="filter-value">Cluster</p>
+          <p class="filter-value">Menagerie</p>
+          <p class="filter-value">Machine</p>
+          <p class="filter-value">Death Star</p>
+          <!--          <p class="filter-value">Base</p>-->
+          <!--          <p class="filter-value">Resort</p>-->
+          <!--          <p class="filter-value">Teenyverse</p>-->
+          <!--          <p class="filter-value">Fantasy town</p>-->
+          <!--          <p class="filter-value">Diegesis</p>-->
+          <!--          <p class="filter-value">Space</p>-->
+          <!--          <p class="filter-value">Convention</p>-->
+          <!--          <p class="filter-value">Police Department</p>-->
+          <!--          <p class="filter-value">Box</p>-->
+          <!--          <p class="filter-value">Quadrant</p>-->
+          <!--          <p class="filter-value">Elemental Rings</p>-->
+          <!--          <p class="filter-value">Daycare</p>-->
+          <!--          <p class="filter-value">Dwarf planet (Celestial Dwarf)</p>-->
+          <!--          <p class="filter-value">Spacecraft</p>-->
+          <!--          <p class="filter-value">Liquid</p>-->
+          <!--          <p class="filter-value">Asteroid</p>-->
+          <!--          <p class="filter-value">Space station</p>-->
+          <!--          <p class="filter-value">TV</p>-->
+          <!--          <p class="filter-value">Nightmare</p>-->
+          <!--          <p class="filter-value">Artificially generated world</p>-->
+          <!--          <p class="filter-value">Acid Plant</p>-->
+          <!--          <p class="filter-value">Customs</p>-->
+          <!--          <p class="filter-value">Mount</p>-->
+          <!--          <p class="filter-value">Planet</p>-->
+          <!--          <p class="filter-value">Non-Diegetic Alternative Reality</p>-->
+          <p class="filter-value">unknown</p>
+        </div>
+        <p class="filter-name">Type:</p>
+        <div class="filter-container">
+          <p class="filter-value">Dimension C-500A</p>
+          <p class="filter-value">Chair Dimension</p>
+          <p class="filter-value">Pizza Dimension</p>
+          <!--          <p class="filter-value">Giant Telepathic Spiders Dimension</p>-->
+          <!--          <p class="filter-value">Fantasy Dimension</p>-->
+          <!--          <p class="filter-value">Dimension 5-126</p>-->
+          <!--          <p class="filter-value">Wasp Dimension</p>-->
+          <!--          <p class="filter-value">Replacement Dimension</p>-->
+          <!--          <p class="filter-value">Dimension D-99</p>-->
+          <!--          <p class="filter-value">Fascist Teddy Bear Dimension</p>-->
+          <!--          <p class="filter-value">Dimension C-35</p>-->
+          <!--          <p class="filter-value">Dimension J-22</p>-->
+          <!--          <p class="filter-value">Cromulon Dimension</p>-->
+          <!--          <p class="filter-value">Merged Dimension</p>-->
+          <!--          <p class="filter-value">Fascist Dimension</p>-->
+          <p class="filter-value">Tusk Dimension</p>
+          <p class="filter-value">Evil Rick's Target Dimension</p>
+          <p class="filter-value">Dimension D716-C</p>
+          <p class="filter-value">Dimension J19ζ7</p>
+          <p class="filter-value">Dimension D716</p>
+          <!--          <p class="filter-value">Unknown dimension</p>-->
+          <!--          <p class="filter-value">Dimension D716-B</p>-->
+          <!--          <p class="filter-value">Cronenberg Dimension</p>-->
+          <!--          <p class="filter-value">Dimension K-22</p>-->
+          <!--          <p class="filter-value">Eric Stoltz Mask Dimension</p>-->
+          <!--          <p class="filter-value">Fascist Shrimp Dimension</p>-->
+          <!--          <p class="filter-value">Post-Apocalyptic Dimension</p>-->
+          <!--          <p class="filter-value">Phone Dimension</p>-->
+          <!--          <p class="filter-value">Dimension C-137</p>-->
+          <!--          <p class="filter-value">Dimension K-83</p>-->
+          <!--          <p class="filter-value">Magic Dimension</p>-->
+          <!--          <p class="filter-value">Testicle Monster Dimension</p>-->
+          <p class="filter-value">unknown</p>
+        </div>
+      </div>
+      <div class="cards">
+        <input class="search-input" type="text" placeholder="Search" />
+        <div class="card card-short">
+          <div class="character-card">
+            <div class="section">
+              <a
+                href="location.html"
+                rel="nofollow noopener noreferrer"
+                class="external-link"
+              >
+                <h2>Earth (C-137)</h2>
+              </a>
+            </div>
+            <div class="section">
+              <span class="text-color">Dimension:</span>
+              <p class="description">Dimension C-137</p>
+            </div>
+            <div class="section">
+              <span class="text-color">Type:</span>
+              <p class="description">Planet</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-short">
+          <div class="character-card">
+            <div class="section">
+              <a
+                href="https://rickandmortyapi.com/api/location/13"
+                rel="nofollow noopener noreferrer"
+                target="_blank"
+                class="external-link"
+              >
+                <h2>Nuptia 4</h2>
+              </a>
+            </div>
+            <div class="section">
+              <span class="text-color">Dimension:</span>
+              <p class="description">unknown</p>
+            </div>
+            <div class="section">
+              <span class="text-color">Type:</span>
+              <p class="description">Planet</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-short">
+          <div class="character-card">
+            <div class="section">
+              <a
+                href="https://rickandmortyapi.com/api/location/23"
+                rel="nofollow noopener noreferrer"
+                target="_blank"
+                class="external-link"
+              >
+                <h2>Earth (C-500A)</h2>
+              </a>
+            </div>
+            <div class="section">
+              <span class="text-color">Dimension:</span>
+              <p class="description">Dimension C-500A</p>
+            </div>
+            <div class="section">
+              <span class="text-color">Type:</span>
+              <p class="description">Planet</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-short">
+          <div class="character-card">
+            <div class="section">
+              <a
+                href="https://rickandmortyapi.com/api/location/24"
+                rel="nofollow noopener noreferrer"
+                target="_blank"
+                class="external-link"
+              >
+                <h2>Rick's Battery Microverse</h2>
+              </a>
+            </div>
+            <div class="section">
+              <span class="text-color">Dimension:</span>
+              <p class="description">Replacement Dimension</p>
+            </div>
+            <div class="section">
+              <span class="text-color">Type:</span>
+              <p class="description">Microverse</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-short">
+          <div class="character-card">
+            <div class="section">
+              <a
+                href="https://rickandmortyapi.com/api/location/25"
+                rel="nofollow noopener noreferrer"
+                target="_blank"
+                class="external-link"
+              >
+                <h2>The Menagerie</h2>
+              </a>
+            </div>
+            <div class="section">
+              <span class="text-color">Dimension:</span>
+              <p class="description">unknown</p>
+            </div>
+            <div class="section">
+              <span class="text-color">Type:</span>
+              <p class="description">Menagerie</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-short">
+          <div class="character-card">
+            <div class="section">
+              <a
+                href="https://rickandmortyapi.com/api/location/35"
+                rel="nofollow noopener noreferrer"
+                target="_blank"
+                class="external-link"
+              >
+                <h2>Planet Squanch</h2>
+              </a>
+            </div>
+            <div class="section">
+              <span class="text-color">Dimension:</span>
+              <p class="description">Replacement Dimension</p>
+            </div>
+            <div class="section">
+              <span class="text-color">Type:</span>
+              <p class="description">Planet</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="footer-container">
         <div class="copyright">&lt;/&gt;by Quicksilver32 2022</div>
-        <a
-          class="social-media"
-          target="_blank"
-          href="https://github.com/quicksilver32"
-        >
+        <a class="social-media" href="https://github.com/quicksilver32">
           <svg
             width="64"
             height="64"
@@ -52,11 +262,7 @@
           </svg>
         </a>
 
-        <a
-          class="social-media"
-          target="_blank"
-          href="https://vk.com/id135732126"
-        >
+        <a class="social-media" href="https://vk.com/id135732126">
           <svg
             width="64"
             height="64"
@@ -71,11 +277,7 @@
           </svg>
         </a>
 
-        <a
-          class="social-media"
-          target="_blank"
-          href="https://instagram.com/quicksilver_meow"
-        >
+        <a class="social-media" href="https://instagram.com/quicksilver_meow">
           <svg
             class="social-media"
             width="64"

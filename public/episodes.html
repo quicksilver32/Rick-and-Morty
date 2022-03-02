@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/cards.css" />
     <link href="http://fonts.cdnfonts.com/css/krona-one" rel="stylesheet" />
     <title>Rick and Morty</title>
   </head>
@@ -17,27 +18,155 @@
         <nav class="nav-container">
           <a class="nav-link" href="characters.html">CHARACTERS</a>
           <a class="nav-link" href="locations.html">LOCATIONS</a>
-          <a class="nav-link" href="episodes.html">EPISODES</a>
+          <a class="nav-link nav-link-selected" href="episodes.html"
+            >EPISODES</a
+          >
         </nav>
       </div>
     </header>
     <main>
-      <p class="main-text">
-        The Rick and Morty API is a REST API based on the television show Rick
-        and Morty. You will have access to about hundreds of characters, images,
-        locations and episodes. The Rick and Morty API is filled with canonical
-        information as seen on the TV show.
-      </p>
-      <img class="main-img" src="images/main-img.png" alt="logo" />
+      <div class="filters">
+        <p class="filter-name">Season:</p>
+        <div class="filter-container">
+          <p class="filter-value">1</p>
+          <p class="filter-value filter-selected">2</p>
+          <p class="filter-value">3</p>
+        </div>
+      </div>
+      <div class="cards">
+        <input class="search-input" type="text" placeholder="Search" />
+        <div class="card card-short">
+          <div class="character-card">
+            <div class="section">
+              <a
+                href="episode.html"
+                rel="nofollow noopener noreferrer"
+                class="external-link"
+              >
+                <h2>A Rickle in Time</h2>
+              </a>
+            </div>
+            <div class="section">
+              <span class="text-color">Episode:</span>
+              <p class="description">Season 2 Episode 1</p>
+            </div>
+            <div class="section">
+              <span class="text-color">Air date:</span>
+              <p class="description">July 26, 2015</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-short">
+          <div class="character-card">
+            <div class="section">
+              <a
+                href="https://rickandmortyapi.com/api/episode/13"
+                rel="nofollow noopener noreferrer"
+                class="external-link"
+              >
+                <h2>Mortynight Run</h2>
+              </a>
+            </div>
+            <div class="section">
+              <span class="text-color">Episode:</span>
+              <p class="description">Season 2 Episode 2</p>
+            </div>
+            <div class="section">
+              <span class="text-color">Air date:</span>
+              <p class="description">August 2, 2015</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-short">
+          <div class="character-card">
+            <div class="section">
+              <a
+                href="https://rickandmortyapi.com/api/episode/14"
+                rel="nofollow noopener noreferrer"
+                class="external-link"
+              >
+                <h2>Auto Erotic Assimilation</h2>
+              </a>
+            </div>
+            <div class="section">
+              <span class="text-color">Episode:</span>
+              <p class="description">Season 2 Episode 3</p>
+            </div>
+            <div class="section">
+              <span class="text-color">Air date:</span>
+              <p class="description">August 9, 2015</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-short">
+          <div class="character-card">
+            <div class="section">
+              <a
+                href="https://rickandmortyapi.com/api/episode/15"
+                rel="nofollow noopener noreferrer"
+                class="external-link"
+              >
+                <h2>Total Rickall</h2>
+              </a>
+            </div>
+            <div class="section">
+              <span class="text-color">Episode:</span>
+              <p class="description">Season 2 Episode 4</p>
+            </div>
+            <div class="section">
+              <span class="text-color">Air date:</span>
+              <p class="description">August 16, 2015</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-short">
+          <div class="character-card">
+            <div class="section">
+              <a
+                href="https://rickandmortyapi.com/api/episode/15"
+                rel="nofollow noopener noreferrer"
+                class="external-link"
+              >
+                <h2>Get Schwifty</h2>
+              </a>
+            </div>
+            <div class="section">
+              <span class="text-color">Episode:</span>
+              <p class="description">Season 2 Episode 5</p>
+            </div>
+            <div class="section">
+              <span class="text-color">Air date:</span>
+              <p class="description">August 23, 2015</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-short">
+          <div class="character-card">
+            <div class="section">
+              <a
+                href="https://rickandmortyapi.com/api/episode/17"
+                rel="nofollow noopener noreferrer"
+                class="external-link"
+              >
+                <h2>The Ricks Must Be Crazy</h2>
+              </a>
+            </div>
+            <div class="section">
+              <span class="text-color">Episode:</span>
+              <p class="description">Season 2 Episode</p>
+            </div>
+            <div class="section">
+              <span class="text-color">Air date:</span>
+              <p class="description">August 30, 2015</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="footer-container">
         <div class="copyright">&lt;/&gt;by Quicksilver32 2022</div>
-        <a
-          class="social-media"
-          target="_blank"
-          href="https://github.com/quicksilver32"
-        >
+        <a class="social-media" href="https://github.com/quicksilver32">
           <svg
             width="64"
             height="64"
@@ -52,11 +181,7 @@
           </svg>
         </a>
 
-        <a
-          class="social-media"
-          target="_blank"
-          href="https://vk.com/id135732126"
-        >
+        <a class="social-media" href="https://vk.com/id135732126">
           <svg
             width="64"
             height="64"
@@ -71,11 +196,7 @@
           </svg>
         </a>
 
-        <a
-          class="social-media"
-          target="_blank"
-          href="https://instagram.com/quicksilver_meow"
-        >
+        <a class="social-media" href="https://instagram.com/quicksilver_meow">
           <svg
             class="social-media"
             width="64"

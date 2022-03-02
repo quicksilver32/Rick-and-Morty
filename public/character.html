@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/index.css" />
+    <!--    <link rel="stylesheet" href="cards.css" />-->
+    <link rel="stylesheet" href="css/single-page.css" />
     <link href="http://fonts.cdnfonts.com/css/krona-one" rel="stylesheet" />
+    <link
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
     <title>Rick and Morty</title>
   </head>
   <body>
@@ -15,29 +21,74 @@
           </a>
         </div>
         <nav class="nav-container">
-          <a class="nav-link" href="characters.html">CHARACTERS</a>
+          <a class="nav-link nav-link-selected" href="characters.html"
+            >CHARACTERS</a
+          >
           <a class="nav-link" href="locations.html">LOCATIONS</a>
           <a class="nav-link" href="episodes.html">EPISODES</a>
         </nav>
       </div>
     </header>
     <main>
-      <p class="main-text">
-        The Rick and Morty API is a REST API based on the television show Rick
-        and Morty. You will have access to about hundreds of characters, images,
-        locations and episodes. The Rick and Morty API is filled with canonical
-        information as seen on the TV show.
-      </p>
-      <img class="main-img" src="images/main-img.png" alt="logo" />
+      <div class="first-section">
+        <div class="section-wrapper">
+          <h2>Duck With Muscles</h2>
+          <span class="status-character">
+            <span class="status-icon dead"></span> Dead
+          </span>
+        </div>
+        <img
+          class="character-img"
+          src="https://rickandmortyapi.com/api/character/avatar/109.jpeg"
+          alt="Duck With Muscles"
+        />
+      </div>
+      <div class="second-section">
+        <div class="species-wrapper">
+          <span class="species">Alien</span>
+          <span class="species">Parasite</span>
+          <span class="species"
+            ><img src="images/male.png" alt="male" />Male</span
+          >
+        </div>
+        <div class="info">
+          <div class="section-wrapper">
+            <span class="text-color-dark">Origin location:</span
+            ><a
+              href=""
+              rel="nofollow noopener noreferrer"
+              class="external-link-dark"
+              >unknown</a
+            >
+          </div>
+          <div class="section-wrapper">
+            <span class="text-color-dark">Last known location:</span
+            ><a
+              href="https://rickandmortyapi.com/api/location/20"
+              rel="nofollow noopener noreferrer"
+              class="external-link-dark"
+              >Earth (Replacement Dimension)</a
+            >
+          </div>
+          <div class="section-wrapper">
+            <span class="text-color-dark">Episodes:</span>
+            <div class="episodes-wrapper">
+              <a
+                href="https://rickandmortyapi.com/api/episode/15"
+                rel="nofollow noopener noreferrer"
+                class="external-link-dark episode"
+              >
+                Total Rickall (S02E04)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="footer-container">
         <div class="copyright">&lt;/&gt;by Quicksilver32 2022</div>
-        <a
-          class="social-media"
-          target="_blank"
-          href="https://github.com/quicksilver32"
-        >
+        <a class="social-media" href="https://github.com/quicksilver32">
           <svg
             width="64"
             height="64"
@@ -52,11 +103,7 @@
           </svg>
         </a>
 
-        <a
-          class="social-media"
-          target="_blank"
-          href="https://vk.com/id135732126"
-        >
+        <a class="social-media" href="https://vk.com/id135732126">
           <svg
             width="64"
             height="64"
@@ -71,11 +118,7 @@
           </svg>
         </a>
 
-        <a
-          class="social-media"
-          target="_blank"
-          href="https://instagram.com/quicksilver_meow"
-        >
+        <a class="social-media" href="https://instagram.com/quicksilver_meow">
           <svg
             class="social-media"
             width="64"

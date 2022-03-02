@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/single-page.css" />
     <link href="http://fonts.cdnfonts.com/css/krona-one" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <title>Rick and Morty</title>
   </head>
   <body>
@@ -17,27 +23,298 @@
         <nav class="nav-container">
           <a class="nav-link" href="characters.html">CHARACTERS</a>
           <a class="nav-link" href="locations.html">LOCATIONS</a>
-          <a class="nav-link" href="episodes.html">EPISODES</a>
+          <a class="nav-link nav-link-selected" href="episodes.html"
+            >EPISODES</a
+          >
         </nav>
       </div>
     </header>
-    <main>
-      <p class="main-text">
-        The Rick and Morty API is a REST API based on the television show Rick
-        and Morty. You will have access to about hundreds of characters, images,
-        locations and episodes. The Rick and Morty API is filled with canonical
-        information as seen on the TV show.
-      </p>
-      <img class="main-img" src="images/main-img.png" alt="logo" />
+    <main style="display: grid; grid-template-columns: 1fr">
+      <div class="episode-nav">
+        <span class="episode-nav-item">
+          <span class="material-icons">arrow_back_ios</span>Prev. Episode</span
+        >
+        <h1 class="name">A Rickle in Time</h1>
+        <span class="episode-nav-item"
+          >Next Episode<span class="material-icons"
+            >arrow_forward_ios</span
+          ></span
+        >
+      </div>
+      <div class="species-wrapper">
+        <span>Season 2 Episode 1</span>
+        <span
+          ><span class="text-color-dark">Air date:&nbsp;</span>July 26,
+          2015</span
+        >
+      </div>
+      <div class="info">
+        <div class="cards">
+          <div class="card">
+            <div class="img-card-wrapper">
+              <img
+                src="https://rickandmortyapi.com/api/character/avatar/109.jpeg"
+                alt="Duck With Muscles"
+              />
+            </div>
+            <div class="character-card">
+              <div class="section">
+                <a
+                  href="character.html"
+                  rel="nofollow noopener noreferrer"
+                  class="external-link"
+                >
+                  <h2 class="card-title">Duck With Muscles</h2>
+                </a>
+                <span class="status">
+                  <span class="status-icon dead"></span> Dead - Alien
+                </span>
+              </div>
+              <div class="section">
+                <span class="text-color">Last known location:</span
+                ><a
+                  href="https://rickandmortyapi.com/api/location/20"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                  >Earth (Replacement Dimension)</a
+                >
+              </div>
+              <div class="section">
+                <span class="text-color">First seen in:</span
+                ><a
+                  href="https://rickandmortyapi.com/api/episode/15"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                  >Total Rickall</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img-card-wrapper">
+              <img
+                src="https://rickandmortyapi.com/api/character/avatar/136.jpeg"
+                alt="Gazorpazorpfield"
+              />
+            </div>
+            <div class="character-card">
+              <div class="section">
+                <a
+                  href="https://rickandmortyapi.com/api/character/136"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                >
+                  <h2 class="card-title">Gazorpazorpfield</h2>
+                </a>
+                <span class="status">
+                  <span class="status-icon alive"></span> Alive - Alien
+                </span>
+              </div>
+              <div class="section">
+                <span class="text-color">Last known location:</span
+                ><a
+                  href="https://rickandmortyapi.com/api/location/6"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                  >Interdimensional Cable</a
+                >
+              </div>
+              <div class="section">
+                <span class="text-color">First seen in:</span
+                ><a
+                  href="https://rickandmortyapi.com/api/episode/8"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                  >Rixty Minutes</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img-card-wrapper">
+              <img
+                src="https://rickandmortyapi.com/api/character/avatar/233.jpeg"
+                alt="Morty K-22"
+              />
+            </div>
+            <div class="character-card">
+              <div class="section">
+                <a
+                  href="https://rickandmortyapi.com/api/character/233"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                >
+                  <h2 class="card-title">Morty K-22</h2>
+                </a>
+                <span class="status">
+                  <span class="status-icon alive"></span> Alive - Human
+                </span>
+              </div>
+              <div class="section">
+                <span class="text-color">Last known location:</span
+                ><a
+                  href="https://rickandmortyapi.com/api/location/20"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                  >Earth (Replacement Dimension)</a
+                >
+              </div>
+              <div class="section">
+                <span class="text-color">First seen in:</span
+                ><a
+                  href="https://rickandmortyapi.com/api/episode/28"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                  >The Ricklantis Mixup</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img-card-wrapper">
+              <img
+                src="https://rickandmortyapi.com/api/character/avatar/236.jpeg"
+                alt="Mr. Beauregard"
+              />
+            </div>
+            <div class="character-card">
+              <div class="section">
+                <a
+                  href="https://rickandmortyapi.com/api/character/236"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                >
+                  <h2 class="card-title">Mr. Beauregard</h2>
+                </a>
+                <span class="status">
+                  <span class="status-icon dead"></span> Dead - Human
+                </span>
+              </div>
+              <div class="section">
+                <span class="text-color">Last known location:</span
+                ><a
+                  href="https://rickandmortyapi.com/api/location/20"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                  >Earth (Replacement Dimension)</a
+                >
+              </div>
+              <div class="section">
+                <span class="text-color">First seen in:</span
+                ><a
+                  href="https://rickandmortyapi.com/api/episode/15"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                  >Total Rickall</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img-card-wrapper">
+              <img
+                src="https://rickandmortyapi.com/api/character/avatar/327.jpeg"
+                alt="Slow Mobius"
+              />
+            </div>
+            <div class="character-card">
+              <div class="section">
+                <a
+                  href="https://rickandmortyapi.com/api/character/327"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                >
+                  <h2 class="card-title">Slow Mobius</h2>
+                </a>
+                <span class="status">
+                  <span class="status-icon alive"></span> Alive - Humanoid
+                </span>
+              </div>
+              <div class="section">
+                <span class="text-color">Last known location:</span
+                ><a
+                  href="https://rickandmortyapi.com/api/location/20"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                  >Earth (Replacement Dimension)</a
+                >
+              </div>
+              <div class="section">
+                <span class="text-color">First seen in:</span
+                ><a
+                  href="https://rickandmortyapi.com/api/episode/11"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                  >Ricksy Business</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img-card-wrapper">
+              <img
+                src="https://rickandmortyapi.com/api/character/avatar/387.jpeg"
+                alt="Zarbadar's Mytholog"
+              />
+            </div>
+            <div class="character-card">
+              <div class="section">
+                <a
+                  href="https://rickandmortyapi.com/api/character/387"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                >
+                  <h2 class="card-title">Zarbadar's Mytholog</h2>
+                </a>
+                <span class="status">
+                  <span class="status-icon alive"></span> unknown - mythological
+                  creature
+                </span>
+              </div>
+              <div class="section">
+                <span class="text-color">Last known location:</span
+                ><a
+                  href="https://rickandmortyapi.com/api/location/13"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                  >Nuptia 4</a
+                >
+              </div>
+              <div class="section">
+                <span class="text-color">First seen in:</span
+                ><a
+                  href="https://rickandmortyapi.com/api/episode/18"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="external-link"
+                  >Big Trouble in Little Sanchez</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="footer-container">
         <div class="copyright">&lt;/&gt;by Quicksilver32 2022</div>
-        <a
-          class="social-media"
-          target="_blank"
-          href="https://github.com/quicksilver32"
-        >
+        <a class="social-media" href="https://github.com/quicksilver32">
           <svg
             width="64"
             height="64"
@@ -52,11 +329,7 @@
           </svg>
         </a>
 
-        <a
-          class="social-media"
-          target="_blank"
-          href="https://vk.com/id135732126"
-        >
+        <a class="social-media" href="https://vk.com/id135732126">
           <svg
             width="64"
             height="64"
@@ -71,11 +344,7 @@
           </svg>
         </a>
 
-        <a
-          class="social-media"
-          target="_blank"
-          href="https://instagram.com/quicksilver_meow"
-        >
+        <a class="social-media" href="https://instagram.com/quicksilver_meow">
           <svg
             class="social-media"
             width="64"
