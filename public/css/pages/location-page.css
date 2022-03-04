@@ -1,0 +1,22 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.name {
+    justify-self: center;
+    text-decoration: underline;
+}
+
+.episode-info {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.episode-info__text {
+    color: #484848;
+    font-size: .75em;
+}

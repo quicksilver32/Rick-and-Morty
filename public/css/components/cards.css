@@ -1,0 +1,83 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-self: flex-start;
+}
+
+.card {
+    background: rgba(111, 57, 147, 0.5);
+    width: 500px;
+    height: 220px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    margin: 0.75rem;
+    box-shadow: rgba(0, 0, 0, .1) 0 4px 6px -1px, rgba(0, 0, 0, 0.06) 0 2px 4px;
+}
+
+.card:hover {
+    background: rgba(200, 135, 232, 0.5);
+}
+
+.card-short {
+    width: 300px;
+}
+
+.card__image {
+    flex-basis: content;
+    width: 100%;
+}
+
+img {
+    height: 100%;
+}
+
+.card__info {
+    padding-left: 0.75rem;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-section__title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.info-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.description {
+    margin-block: 0;
+    text-transform: capitalize;
+}
+
+.info-section__link {
+    color: rgb(245, 245, 245);
+    text-decoration: none;
+}
+
+.info-section__link:hover {
+    color: #F2E96B;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+.info-section__status {
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.info-section__text {
+    color: rgb(17 67 110);
+    font-size: .75rem;
+}
