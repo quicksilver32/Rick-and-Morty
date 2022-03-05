@@ -3,7 +3,7 @@ header {
     background: linear-gradient(180deg, #05F2F2 0%, rgba(5, 242, 242, 0) 100%);
 }
 
-.header {
+.header-container {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(12, 1fr);

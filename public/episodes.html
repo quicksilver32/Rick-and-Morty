@@ -12,27 +12,33 @@
     <link rel="stylesheet" href="css/components/search.css" />
     <link rel="stylesheet" href="css/components/cards.css" />
     <link href="http://fonts.cdnfonts.com/css/krona-one" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <title>Rick and Morty</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <header>
-      <div class="header">
+      <div class="header-container">
         <div class="header__logo">
           <a href="index.html">
             <img
-                    class="logo-img"
-                    src="images/logo2.png"
-                    height="37"
-                    width="200"
-                    alt="logo"
+              class="logo-img"
+              src="images/logo2.png"
+              height="37"
+              width="200"
+              alt="logo"
             />
           </a>
         </div>
         <nav class="nav">
           <a class="nav__link" href="characters.html">CHARACTERS</a>
           <a class="nav__link" href="locations.html">LOCATIONS</a>
-          <a class="nav__link nav-link-selected" href="episodes.html">EPISODES</a>
+          <a class="nav__link nav-link-selected" href="episodes.html"
+            >EPISODES</a
+          >
         </nav>
       </div>
     </header>
@@ -41,13 +47,20 @@
         <div class="filter">
           <p class="filter__name">Season:</p>
           <div class="filter__container">
-            <button class="filter__value">1</button>
-            <button class="filter__value filter-selected">2</button>
-            <button class="filter__value">3</button>
+            <button type="button" class="filter__value">1</button>
+            <button type="button" class="filter__value filter-selected">
+              2
+            </button>
+            <button type="button" class="filter__value">3</button>
           </div>
         </div>
         <div class="cards">
-          <input class="search-input" type="text" placeholder="Search" />
+          <div class="search">
+            <input class="search__input" type="text" placeholder="Search" />
+            <button type="button" class="search__button">
+              <span class="material-icons search__icon">search</span>
+            </button>
+          </div>
           <div class="card card-short">
             <div class="card__info">
               <div class="info-section">
@@ -178,37 +191,37 @@
       </div>
     </main>
     <footer>
-      <div class="footer">
+      <div class="footer-container">
         <p class="copyright">&lt;/&gt;by Quicksilver32 2022</p>
         <a
-                class="social-media"
-                target="_blank"
-                href="https://github.com/quicksilver32"
+          class="social-media"
+          target="_blank"
+          href="https://github.com/quicksilver32"
         >
           <img
-                  src="images/svg/social-git.svg"
-                  width="64"
-                  height="64"
-                  alt="github"
+            src="images/svg/social-git.svg"
+            width="64"
+            height="64"
+            alt="github"
           />
         </a>
         <a
-                class="social-media"
-                target="_blank"
-                href="https://vk.com/id135732126"
+          class="social-media"
+          target="_blank"
+          href="https://vk.com/id135732126"
         >
           <img src="images/svg/social-vk.svg" width="64" height="64" alt="vk" />
         </a>
         <a
-                class="social-media"
-                target="_blank"
-                href="https://instagram.com/quicksilver_meow"
+          class="social-media"
+          target="_blank"
+          href="https://instagram.com/quicksilver_meow"
         >
           <img
-                  src="images/svg/social-inst.svg"
-                  width="64"
-                  height="64"
-                  alt="inst"
+            src="images/svg/social-inst.svg"
+            width="64"
+            height="64"
+            alt="inst"
           />
         </a>
       </div>

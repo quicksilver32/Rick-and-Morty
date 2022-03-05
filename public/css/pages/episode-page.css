@@ -3,25 +3,6 @@
     grid-template-columns: 1fr;
 }
 
-.name {
-    justify-self: center;
-    text-decoration: underline;
-}
-
-.species {
-    display: flex;
-    justify-content: space-evenly;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-bottom: 30px;
-    font-size: 1.5em;
-}
-
-.species__value {
-    display: flex;
-    align-items: center;
-}
-
 .episode {
     margin-right: 10px;
 }
@@ -48,7 +29,7 @@
     align-items: center;
 }
 
-.episode-nav-item:hover{
+.episode-nav-item:hover {
     text-decoration: underline;
     cursor: pointer;
 }
@@ -63,5 +44,5 @@
 
 .episode-info__text {
     color: #484848;
-    font-size: .75em;
+    font-size: 0.75em;
 }

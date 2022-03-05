@@ -15,7 +15,6 @@ body {
     flex-direction: column;
 }
 
-
 main {
     flex: 1 0 auto;
 }
@@ -26,4 +25,10 @@ header {
 
 footer {
     flex: 0 0 auto;
+}
+
+:root {
+    --alive-color: rgb(85, 204, 68);
+    --dead-color: rgb(214, 61, 46);
+    --unknown-color: rgb(158, 158, 158);
 }

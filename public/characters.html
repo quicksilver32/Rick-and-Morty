@@ -13,25 +13,31 @@
     <link rel="stylesheet" href="css/components/cards.css" />
     <link rel="stylesheet" href="css/components/status-icon.css" />
     <link href="http://fonts.cdnfonts.com/css/krona-one" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <title>Rick and Morty</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <header>
-      <div class="header">
+      <div class="header-container">
         <div class="header__logo">
           <a href="index.html">
             <img
-                    class="logo-img"
-                    src="images/logo2.png"
-                    height="37"
-                    width="200"
-                    alt="logo"
+              class="logo-img"
+              src="images/logo2.png"
+              height="37"
+              width="200"
+              alt="logo"
             />
           </a>
         </div>
         <nav class="nav">
-          <a class="nav__link nav-link-selected" href="characters.html">CHARACTERS</a>
+          <a class="nav__link nav-link-selected" href="characters.html"
+            >CHARACTERS</a
+          >
           <a class="nav__link" href="locations.html">LOCATIONS</a>
           <a class="nav__link" href="episodes.html">EPISODES</a>
         </nav>
@@ -48,34 +54,40 @@
           </div>
           <p class="filter__name">Gender:</p>
           <div class="filter__container">
-            <button class="filter__value">male</button>
-            <button class="filter__value">female</button>
-            <button class="filter__value filter-selected">genderless</button>
-            <button class="filter__value">unknown</button>
+            <button type="button" class="filter__value">male</button>
+            <button type="button" class="filter__value">female</button>
+            <button type="button" class="filter__value filter-selected">genderless</button>
+            <button type="button" class="filter__value">unknown</button>
           </div>
           <p class="filter__name">Species:</p>
           <div class="filter__container">
-            <button class="filter__value">Mythological Creature</button>
-            <button class="filter__value">Disease</button>
-            <button class="filter__value">Alien</button>
-            <button class="filter__value">Human</button>
-            <button class="filter__value">Animal</button>
-            <button class="filter__value">Poopybutthole</button>
-            <button class="filter__value">Cronenberg</button>
-            <button class="filter__value">Robot</button>
-            <button class="filter__value">Humanoid</button>
-            <button class="filter__value">unknown</button>
+            <button type="button" class="filter__value">Mythological Creature</button>
+            <button type="button" class="filter__value">Disease</button>
+            <button type="button" class="filter__value">Alien</button>
+            <button type="button" class="filter__value">Human</button>
+            <button type="button" class="filter__value">Animal</button>
+            <button type="button" class="filter__value">Poopybutthole</button>
+            <button type="button" class="filter__value">Cronenberg</button>
+            <button type="button" class="filter__value">Robot</button>
+            <button type="button" class="filter__value">Humanoid</button>
+            <button type="button" class="filter__value">unknown</button>
           </div>
         </div>
         <div class="cards">
-          <input class="search-input" type="text" placeholder="Search" />
+          <div class="search">
+            <input class="search__input" type="text" placeholder="Search" />
+            <button type="button" class="search__button">
+              <span  class="material-icons search__icon">search</span>
+            </button>
+          </div>
           <div class="card">
-            <div class="card__image">
-              <img
-                src="https://rickandmortyapi.com/api/character/avatar/109.jpeg"
-                alt="Duck With Muscles"
-              />
-            </div>
+            <img
+              class="card__image"
+              src="https://rickandmortyapi.com/api/character/avatar/109.jpeg"
+              alt="Duck With Muscles"
+              height="220"
+              width="220"
+            />
             <div class="card__info">
               <div class="info-section">
                 <a
@@ -116,6 +128,8 @@
               <img
                 src="https://rickandmortyapi.com/api/character/avatar/136.jpeg"
                 alt="Gazorpazorpfield"
+                height="220"
+                width="220"
               />
             </div>
             <div class="card__info">
@@ -159,6 +173,8 @@
               <img
                 src="https://rickandmortyapi.com/api/character/avatar/233.jpeg"
                 alt="Morty K-22"
+                height="220"
+                width="220"
               />
             </div>
             <div class="card__info">
@@ -202,6 +218,8 @@
               <img
                 src="https://rickandmortyapi.com/api/character/avatar/236.jpeg"
                 alt="Mr. Beauregard"
+                height="220"
+                width="220"
               />
             </div>
             <div class="card__info">
@@ -212,7 +230,7 @@
                   target="_blank"
                   class="info-section__link"
                 >
-                  <h2 class="info-section__title">Mr. Beauregard</h2>
+                  <x class="info-section__title">Mr. Beauregard</x>
                 </a>
                 <span class="info-section__status">
                   <span class="status-icon dead"></span> Dead - Human
@@ -245,6 +263,8 @@
               <img
                 src="https://rickandmortyapi.com/api/character/avatar/327.jpeg"
                 alt="Slow Mobius"
+                height="220"
+                width="220"
               />
             </div>
             <div class="card__info">
@@ -288,6 +308,8 @@
               <img
                 src="https://rickandmortyapi.com/api/character/avatar/387.jpeg"
                 alt="Zarbadar's Mytholog"
+                height="220"
+                width="220"
               />
             </div>
             <div class="card__info">
@@ -331,37 +353,37 @@
       </div>
     </main>
     <footer>
-      <div class="footer">
+      <div class="footer-container">
         <p class="copyright">&lt;/&gt;by Quicksilver32 2022</p>
         <a
-                class="social-media"
-                target="_blank"
-                href="https://github.com/quicksilver32"
+          class="social-media"
+          target="_blank"
+          href="https://github.com/quicksilver32"
         >
           <img
-                  src="images/svg/social-git.svg"
-                  width="64"
-                  height="64"
-                  alt="github"
+            src="images/svg/social-git.svg"
+            width="64"
+            height="64"
+            alt="github"
           />
         </a>
         <a
-                class="social-media"
-                target="_blank"
-                href="https://vk.com/id135732126"
+          class="social-media"
+          target="_blank"
+          href="https://vk.com/id135732126"
         >
           <img src="images/svg/social-vk.svg" width="64" height="64" alt="vk" />
         </a>
         <a
-                class="social-media"
-                target="_blank"
-                href="https://instagram.com/quicksilver_meow"
+          class="social-media"
+          target="_blank"
+          href="https://instagram.com/quicksilver_meow"
         >
           <img
-                  src="images/svg/social-inst.svg"
-                  width="64"
-                  height="64"
-                  alt="inst"
+            src="images/svg/social-inst.svg"
+            width="64"
+            height="64"
+            alt="inst"
           />
         </a>
       </div>

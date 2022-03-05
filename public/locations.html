@@ -11,13 +11,16 @@
     <link rel="stylesheet" href="css/pages/search-page.css" />
     <link rel="stylesheet" href="css/components/search.css" />
     <link rel="stylesheet" href="css/components/cards.css" />
-    <link href="http://fonts.cdnfonts.com/css/krona-one" rel="stylesheet" />
+    <link href="http://fonts.cdnfonts.com/css/krona-one" rel="stylesheet" /><link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+  />
     <title>Rick and Morty</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <header>
-      <div class="header">
+      <div class="header-container">
         <div class="header__logo">
           <a href="index.html">
             <img
@@ -43,42 +46,53 @@
         <div class="filter">
           <p class="filter__name">Type:</p>
           <div class="filter__container">
-            <button class="filter__value">Spa</button>
-            <button class="filter__value">Woods</button>
-            <button class="filter__value">Microverse</button>
-            <button class="filter__value">Dream</button>
-            <button class="filter__value">Quasar</button>
-            <button class="filter__value">Reality</button>
-            <button class="filter__value">Arcade</button>
-            <button class="filter__value">Hell</button>
-            <button class="filter__value">Human</button>
-            <button class="filter__value">Consciousness</button>
-            <button class="filter__value">Miniverse</button>
-            <button class="filter__value">Game</button>
-            <button class="filter__value">Country</button>
-            <button class="filter__value">Memory</button>
-            <button class="filter__value">Dimension</button>
-            <button class="filter__value">Cluster</button>
-            <button class="filter__value">Menagerie</button>
-            <button class="filter__value">Machine</button>
-            <button class="filter__value">Death Star</button>
-            <button class="filter__value">unknown</button>
+            <button type="button" class="filter__value">Spa</button>
+            <button type="button" class="filter__value">Woods</button>
+            <button type="button" class="filter__value">Microverse</button>
+            <button type="button" class="filter__value">Dream</button>
+            <button type="button" class="filter__value">Quasar</button>
+            <button type="button" class="filter__value">Reality</button>
+            <button type="button" class="filter__value">Arcade</button>
+            <button type="button" class="filter__value">Hell</button>
+            <button type="button" class="filter__value">Human</button>
+            <button type="button" class="filter__value">Consciousness</button>
+            <button type="button" class="filter__value">Miniverse</button>
+            <button type="button" class="filter__value">Game</button>
+            <button type="button" class="filter__value">Country</button>
+            <button type="button" class="filter__value">Memory</button>
+            <button type="button" class="filter__value">Dimension</button>
+            <button type="button" class="filter__value">Cluster</button>
+            <button type="button" class="filter__value">Menagerie</button>
+            <button type="button" class="filter__value">Machine</button>
+            <button type="button" class="filter__value">Death Star</button>
+            <button type="button" class="filter__value">unknown</button>
           </div>
           <p class="filter__name">Type:</p>
           <div class="filter__container">
-            <button class="filter__value">Dimension C-500A</button>
-            <button class="filter__value">Chair Dimension</button>
-            <button class="filter__value">Pizza Dimension</button>
-            <button class="filter__value">Tusk Dimension</button>
-            <button class="filter__value">Evil Rick's Target Dimension</button>
-            <button class="filter__value">Dimension D716-C</button>
-            <button class="filter__value">Dimension J19ζ7</button>
-            <button class="filter__value">Dimension D716</button>
-            <button class="filter__value">unknown</button>
+            <button type="button" class="filter__value">
+              Dimension C-500A
+            </button>
+            <button type="button" class="filter__value">Chair Dimension</button>
+            <button type="button" class="filter__value">Pizza Dimension</button>
+            <button type="button" class="filter__value">Tusk Dimension</button>
+            <button type="button" class="filter__value">
+              Evil Rick's Target Dimension
+            </button>
+            <button type="button" class="filter__value">
+              Dimension D716-C
+            </button>
+            <button type="button" class="filter__value">Dimension J19ζ7</button>
+            <button type="button" class="filter__value">Dimension D716</button>
+            <button type="button" class="filter__value">unknown</button>
           </div>
         </div>
         <div class="cards">
-          <input class="search-input" type="text" placeholder="Search" />
+          <div class="search">
+            <input class="search__input" type="text" placeholder="Search" />
+            <button type="button" class="search__button">
+              <span class="material-icons search__icon">search</span>
+            </button>
+          </div>
           <div class="card card-short">
             <div class="card__info">
               <div class="info-section">
@@ -214,7 +228,7 @@
       </div>
     </main>
     <footer>
-      <div class="footer">
+      <div class="footer-container">
         <p class="copyright">&lt;/&gt;by Quicksilver32 2022</p>
         <a
           class="social-media"

@@ -5,12 +5,13 @@ footer {
     align-items: end;
 }
 
-.footer {
+.footer-container {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
 }
+
 .copyright {
     font-size: 14px;
     grid-column: 1 / 5;
