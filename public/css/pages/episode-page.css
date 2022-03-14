@@ -1,0 +1,48 @@
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.episode {
+    margin-right: 10px;
+}
+
+.episodes-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.name {
+    justify-self: center;
+    text-decoration: underline;
+}
+
+.episode-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.episode-nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.episode-nav-item:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.episode-info {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.episode-info__text {
+    color: #484848;
+    font-size: 0.75em;
+}

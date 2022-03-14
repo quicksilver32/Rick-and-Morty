@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/filters.css" />
+    <link rel="stylesheet" href="css/pages/search-page.css" />
+    <link rel="stylesheet" href="css/components/search.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link href="http://fonts.cdnfonts.com/css/krona-one" rel="stylesheet" /><link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+  />
+    <title>Rick and Morty</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <header>
+      <div class="header-container">
+        <div class="header__logo">
+          <a href="index.html">
+            <img
+              class="logo-img"
+              src="images/logo2.png"
+              height="37"
+              width="200"
+              alt="logo"
+            />
+          </a>
+        </div>
+        <nav class="nav">
+          <a class="nav__link" href="characters.html">CHARACTERS</a>
+          <a class="nav__link nav-link-selected" href="locations.html"
+            >LOCATIONS</a
+          >
+          <a class="nav__link" href="episodes.html">EPISODES</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="main">
+        <div class="filter">
+          <p class="filter__name">Type:</p>
+          <div class="filter__container">
+            <button type="button" class="filter__value">Spa</button>
+            <button type="button" class="filter__value">Woods</button>
+            <button type="button" class="filter__value">Microverse</button>
+            <button type="button" class="filter__value">Dream</button>
+            <button type="button" class="filter__value">Quasar</button>
+            <button type="button" class="filter__value">Reality</button>
+            <button type="button" class="filter__value">Arcade</button>
+            <button type="button" class="filter__value">Hell</button>
+            <button type="button" class="filter__value">Human</button>
+            <button type="button" class="filter__value">Consciousness</button>
+            <button type="button" class="filter__value">Miniverse</button>
+            <button type="button" class="filter__value">Game</button>
+            <button type="button" class="filter__value">Country</button>
+            <button type="button" class="filter__value">Memory</button>
+            <button type="button" class="filter__value">Dimension</button>
+            <button type="button" class="filter__value">Cluster</button>
+            <button type="button" class="filter__value">Menagerie</button>
+            <button type="button" class="filter__value">Machine</button>
+            <button type="button" class="filter__value">Death Star</button>
+            <button type="button" class="filter__value">unknown</button>
+          </div>
+          <p class="filter__name">Type:</p>
+          <div class="filter__container">
+            <button type="button" class="filter__value">
+              Dimension C-500A
+            </button>
+            <button type="button" class="filter__value">Chair Dimension</button>
+            <button type="button" class="filter__value">Pizza Dimension</button>
+            <button type="button" class="filter__value">Tusk Dimension</button>
+            <button type="button" class="filter__value">
+              Evil Rick's Target Dimension
+            </button>
+            <button type="button" class="filter__value">
+              Dimension D716-C
+            </button>
+            <button type="button" class="filter__value">Dimension J19ζ7</button>
+            <button type="button" class="filter__value">Dimension D716</button>
+            <button type="button" class="filter__value">unknown</button>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="search">
+            <input class="search__input" type="text" placeholder="Search" />
+            <button type="button" class="search__button">
+              <span class="material-icons search__icon">search</span>
+            </button>
+          </div>
+          <div class="card card-short">
+            <div class="card__info">
+              <div class="info-section">
+                <a
+                  href="location.html"
+                  rel="nofollow noopener noreferrer"
+                  class="info-section__link"
+                >
+                  <h2>Earth (C-137)</h2>
+                </a>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Dimension:</span>
+                <p class="description">Dimension C-137</p>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Type:</span>
+                <p class="description">Planet</p>
+              </div>
+            </div>
+          </div>
+          <div class="card card-short">
+            <div class="card__info">
+              <div class="info-section">
+                <a
+                  href="https://rickandmortyapi.com/api/location/13"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="info-section__link"
+                >
+                  <h2>Nuptia 4</h2>
+                </a>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Dimension:</span>
+                <p class="description">unknown</p>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Type:</span>
+                <p class="description">Planet</p>
+              </div>
+            </div>
+          </div>
+          <div class="card card-short">
+            <div class="card__info">
+              <div class="info-section">
+                <a
+                  href="https://rickandmortyapi.com/api/location/23"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="info-section__link"
+                >
+                  <h2>Earth (C-500A)</h2>
+                </a>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Dimension:</span>
+                <p class="description">Dimension C-500A</p>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Type:</span>
+                <p class="description">Planet</p>
+              </div>
+            </div>
+          </div>
+          <div class="card card-short">
+            <div class="card__info">
+              <div class="info-section">
+                <a
+                  href="https://rickandmortyapi.com/api/location/24"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="info-section__link"
+                >
+                  <h2>Rick's Battery Microverse</h2>
+                </a>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Dimension:</span>
+                <p class="description">Replacement Dimension</p>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Type:</span>
+                <p class="description">Microverse</p>
+              </div>
+            </div>
+          </div>
+          <div class="card card-short">
+            <div class="card__info">
+              <div class="info-section">
+                <a
+                  href="https://rickandmortyapi.com/api/location/25"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="info-section__link"
+                >
+                  <h2>The Menagerie</h2>
+                </a>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Dimension:</span>
+                <p class="description">unknown</p>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Type:</span>
+                <p class="description">Menagerie</p>
+              </div>
+            </div>
+          </div>
+          <div class="card card-short">
+            <div class="card__info">
+              <div class="info-section">
+                <a
+                  href="https://rickandmortyapi.com/api/location/35"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  class="info-section__link"
+                >
+                  <h2>Planet Squanch</h2>
+                </a>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Dimension:</span>
+                <p class="description">Replacement Dimension</p>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Type:</span>
+                <p class="description">Planet</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <p class="copyright">&lt;/&gt;by Quicksilver32 2022</p>
+        <a
+          class="social-media"
+          target="_blank"
+          href="https://github.com/quicksilver32"
+        >
+          <img
+            src="images/svg/social-git.svg"
+            width="64"
+            height="64"
+            alt="github"
+          />
+        </a>
+        <a
+          class="social-media"
+          target="_blank"
+          href="https://vk.com/id135732126"
+        >
+          <img src="images/svg/social-vk.svg" width="64" height="64" alt="vk" />
+        </a>
+        <a
+          class="social-media"
+          target="_blank"
+          href="https://instagram.com/quicksilver_meow"
+        >
+          <img
+            src="images/svg/social-inst.svg"
+            width="64"
+            height="64"
+            alt="inst"
+          />
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

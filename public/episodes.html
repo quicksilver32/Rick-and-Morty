@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/filters.css" />
+    <link rel="stylesheet" href="css/pages/search-page.css" />
+    <link rel="stylesheet" href="css/components/search.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link href="http://fonts.cdnfonts.com/css/krona-one" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Rick and Morty</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <header>
+      <div class="header-container">
+        <div class="header__logo">
+          <a href="index.html">
+            <img
+              class="logo-img"
+              src="images/logo2.png"
+              height="37"
+              width="200"
+              alt="logo"
+            />
+          </a>
+        </div>
+        <nav class="nav">
+          <a class="nav__link" href="characters.html">CHARACTERS</a>
+          <a class="nav__link" href="locations.html">LOCATIONS</a>
+          <a class="nav__link nav-link-selected" href="episodes.html"
+            >EPISODES</a
+          >
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="main">
+        <div class="filter">
+          <p class="filter__name">Season:</p>
+          <div class="filter__container">
+            <button type="button" class="filter__value">1</button>
+            <button type="button" class="filter__value filter-selected">
+              2
+            </button>
+            <button type="button" class="filter__value">3</button>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="search">
+            <input class="search__input" type="text" placeholder="Search" />
+            <button type="button" class="search__button">
+              <span class="material-icons search__icon">search</span>
+            </button>
+          </div>
+          <div class="card card-short">
+            <div class="card__info">
+              <div class="info-section">
+                <a
+                  href="episode.html"
+                  rel="nofollow noopener noreferrer"
+                  class="info-section__link"
+                >
+                  <h2>A Rickle in Time</h2>
+                </a>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Episode:</span>
+                <p class="description">Season 2 Episode 1</p>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Air date:</span>
+                <p class="description">July 26, 2015</p>
+              </div>
+            </div>
+          </div>
+          <div class="card card-short">
+            <div class="card__info">
+              <div class="info-section">
+                <a
+                  href="https://rickandmortyapi.com/api/episode/13"
+                  rel="nofollow noopener noreferrer"
+                  class="info-section__link"
+                >
+                  <h2>Mortynight Run</h2>
+                </a>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Episode:</span>
+                <p class="description">Season 2 Episode 2</p>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Air date:</span>
+                <p class="description">August 2, 2015</p>
+              </div>
+            </div>
+          </div>
+          <div class="card card-short">
+            <div class="card__info">
+              <div class="info-section">
+                <a
+                  href="https://rickandmortyapi.com/api/episode/14"
+                  rel="nofollow noopener noreferrer"
+                  class="info-section__link"
+                >
+                  <h2>Auto Erotic Assimilation</h2>
+                </a>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Episode:</span>
+                <p class="description">Season 2 Episode 3</p>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Air date:</span>
+                <p class="description">August 9, 2015</p>
+              </div>
+            </div>
+          </div>
+          <div class="card card-short">
+            <div class="card__info">
+              <div class="info-section">
+                <a
+                  href="https://rickandmortyapi.com/api/episode/15"
+                  rel="nofollow noopener noreferrer"
+                  class="info-section__link"
+                >
+                  <h2>Total Rickall</h2>
+                </a>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Episode:</span>
+                <p class="description">Season 2 Episode 4</p>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Air date:</span>
+                <p class="description">August 16, 2015</p>
+              </div>
+            </div>
+          </div>
+          <div class="card card-short">
+            <div class="card__info">
+              <div class="info-section">
+                <a
+                  href="https://rickandmortyapi.com/api/episode/15"
+                  rel="nofollow noopener noreferrer"
+                  class="info-section__link"
+                >
+                  <h2>Get Schwifty</h2>
+                </a>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Episode:</span>
+                <p class="description">Season 2 Episode 5</p>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Air date:</span>
+                <p class="description">August 23, 2015</p>
+              </div>
+            </div>
+          </div>
+          <div class="card card-short">
+            <div class="card__info">
+              <div class="info-section">
+                <a
+                  href="https://rickandmortyapi.com/api/episode/17"
+                  rel="nofollow noopener noreferrer"
+                  class="info-section__link"
+                >
+                  <h2>The Ricks Must Be Crazy</h2>
+                </a>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Episode:</span>
+                <p class="description">Season 2 Episode</p>
+              </div>
+              <div class="info-section">
+                <span class="info-section__text">Air date:</span>
+                <p class="description">August 30, 2015</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <p class="copyright">&lt;/&gt;by Quicksilver32 2022</p>
+        <a
+          class="social-media"
+          target="_blank"
+          href="https://github.com/quicksilver32"
+        >
+          <img
+            src="images/svg/social-git.svg"
+            width="64"
+            height="64"
+            alt="github"
+          />
+        </a>
+        <a
+          class="social-media"
+          target="_blank"
+          href="https://vk.com/id135732126"
+        >
+          <img src="images/svg/social-vk.svg" width="64" height="64" alt="vk" />
+        </a>
+        <a
+          class="social-media"
+          target="_blank"
+          href="https://instagram.com/quicksilver_meow"
+        >
+          <img
+            src="images/svg/social-inst.svg"
+            width="64"
+            height="64"
+            alt="inst"
+          />
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

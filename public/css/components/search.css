@@ -1,0 +1,48 @@
+.search {
+    display: flex;
+    width: 100%;
+    margin-left: 36px;
+}
+
+.search__button {
+    background: transparent;
+    border: 0;
+    position: relative;
+    right: 5.5em;
+    cursor: pointer;
+}
+
+.material-icons.search__icon {
+    line-height: 1.5;
+}
+
+.search__icon:hover {
+    font-weight: bolder;
+}
+
+.search__input {
+    font-family: "Krona One", serif;
+    width: 100%;
+    padding: 12px 24px;
+    margin: 0 30px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000;
+    background-color: transparent;
+    border-radius: 50px;
+    border: 1px solid #000;
+}
+
+.search__input::placeholder {
+    color: rgba(0, 0, 0, .9);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.search__input:focus {
+    outline: 2px solid black;
+}
+
+.search__input:focus::placeholder {
+    color: rgba(0, 0, 0, .5);
+}

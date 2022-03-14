@@ -2,36 +2,83 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/pages/main-page.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link href="http://fonts.cdnfonts.com/css/krona-one" rel="stylesheet" />
+    <title>Rick and Morty</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <header>
+      <div class="header-container">
+        <div class="header__logo">
+          <a href="index.html">
+            <img
+              class="logo-img"
+              src="images/logo2.png"
+              height="37"
+              width="200"
+              alt="logo"
+            />
+          </a>
+        </div>
+        <nav class="nav">
+          <a class="nav__link" href="characters.html">CHARACTERS</a>
+          <a class="nav__link" href="locations.html">LOCATIONS</a>
+          <a class="nav__link" href="episodes.html">EPISODES</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="main">
+        <p class="main__text">
+          The Rick and Morty API is a REST API based on the television show Rick
+          and Morty. You will have access to about hundreds of characters,
+          images, locations and episodes. The Rick and Morty API is filled with
+          canonical information as seen on the TV show.
+        </p>
+        <img class="main__img" src="images/main-img.png" alt="logo" />
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <p class="copyright">&lt;/&gt;by Quicksilver32 2022</p>
+        <a
+          class="social-media"
+          target="_blank"
+          href="https://github.com/quicksilver32"
+        >
+          <img
+            src="images/svg/social-git.svg"
+            width="64"
+            height="64"
+            alt="github"
+          />
+        </a>
+        <a
+          class="social-media"
+          target="_blank"
+          href="https://vk.com/id135732126"
+        >
+          <img src="images/svg/social-vk.svg" width="64" height="64" alt="vk" />
+        </a>
+        <a
+          class="social-media"
+          target="_blank"
+          href="https://instagram.com/quicksilver_meow"
+        >
+          <img
+            src="images/svg/social-inst.svg"
+            width="64"
+            height="64"
+            alt="inst"
+          />
+        </a>
+      </div>
+    </footer>
   </body>
 </html>

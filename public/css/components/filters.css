@@ -1,0 +1,30 @@
+.filter__name {
+    margin: 10px 0;
+}
+
+.filter__name:nth-child(1) {
+    margin-top: 0;
+}
+
+.filter__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.filter__value {
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 45px;
+    padding: 5px;
+    margin: 0 5px 5px 0;
+    text-transform: capitalize;
+    background: transparent;
+    font-family: "Krona One", serif;
+}
+
+.filter-selected, .filter__value:hover {
+    border: 2px solid #05F215;
+    color: #05F215;
+    cursor: pointer;
+}
