@@ -29,9 +29,19 @@
     align-items: center;
 }
 
+.episode-nav-link {
+    color: black;
+    text-decoration: none;
+}
+
 .episode-nav-item:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+
+.disabled {
+    color: gray;
+    pointer-events:none;
 }
 
 .episode-info {
