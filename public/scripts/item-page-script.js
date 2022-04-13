@@ -3,21 +3,17 @@ import {
   getEpisodePageTemplate,
   getLocationPageTemplate,
 } from "./templates.js";
-import { getCards, getIdFromURL, reformatEpisode } from "./utils.js";
+import {getCards, getCurrPage, getIdFromURL, reformatEpisode} from "./utils.js";
 
 const currId = new URLSearchParams(window.location.search).get("id");
+const currUrl = getCurrPage(window.location.pathname);
 
-let currUrl = "";
-if (window.location.pathname.includes("character")) {
-  currUrl = "character";
-}
-if (window.location.pathname.includes("location")) {
-  currUrl = "location";
-}
-if (window.location.pathname.includes("episode")) {
-  currUrl = "episode";
-}
-
+/**
+ * Получает данные по id персонажей/локаций/эпизодов
+ * @param id - один или массив id
+ * @param url - где надо искать
+ * @returns {Promise<any>}
+ */
 const getItem = async (id, url) => {
   const response = await fetch(`https://rickandmortyapi.com/api/${url}/${id}`);
   if (response.status === 200) {

@@ -259,8 +259,8 @@ export const getEpisodePageTemplate = (id, name, episode, air_date) => {
         `;
 };
 
-export const notFoundTemplate = () => {
+export const errorTemplate = (msg) => {
   return `
-  <p class="not-found">There's no data for your query.</p>
+  <p class="not-found">${msg}</p>
   `;
 };

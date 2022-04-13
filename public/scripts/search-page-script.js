@@ -1,16 +1,47 @@
-import { notFoundTemplate } from "./templates.js";
-import { getInfo, clearCards, getCards } from "./utils.js";
+import { errorTemplate } from "./templates.js";
+import {getInfo, clearCards, getCards, getCurrPage} from "./utils.js";
 
 const $cards = document.querySelector(".cards");
 const $form = document.querySelector(".search__form");
 const $formSearch = $form.querySelector(".search__input");
 const $filters = document.querySelector(".filter");
 const $pagination = document.querySelectorAll(".pagination__button");
-const currUrl = window.location.pathname.slice(1, -6);
+const currUrl = getCurrPage(window.location.pathname);
 const searchProps = {};
 let searchValue = "";
 let maxPage = 0;
 
+/**
+ * Получает данные, обновляет кнопки пагинации, данные о результате, отрисовывает карточки или сообщение об ошибке
+ */
+const updateCards = () => {
+  getInfo(searchProps, currUrl)
+    .then((data) => {
+      maxPage = data.info.pages;
+      [...$pagination].forEach((button) => (button.style.display = "flex"));
+      if (maxPage === 1) {
+        [...$pagination].forEach((button) => (button.style.display = "none"));
+      }
+      if (searchProps.page === maxPage) {
+        document.querySelector("#pg-button-next").style.display = "none";
+      }
+      if (searchProps.page === 1) {
+        document.querySelector("#pg-button-prev").style.display = "none";
+      }
+      getCards(data.results, currUrl, $cards);
+    })
+    .catch((err) => {
+      [...$pagination].forEach((button) => (button.style.display = "none"));
+      $cards.insertAdjacentHTML("beforeend", errorTemplate(err.message));
+    });
+};
+
+/**
+ * Формирует объект с фильтрами для поиска
+ * @param filterName - имя фильтра
+ * @param filterValue - значение фильтра
+ * @param type - тип, "add" - добавляет фильтр, если его не было, переписывает значение, если уже был, "delete" - удаляет
+ */
 const updateSearchProps = (filterName, filterValue, type) => {
   filterName = filterName.replaceAll(":", "").toLowerCase();
   if (type === "add") {
@@ -21,34 +52,14 @@ const updateSearchProps = (filterName, filterValue, type) => {
 };
 
 updateSearchProps("page", 1, "add");
-getInfo(searchProps, currUrl)
-  .then((data) => {
-    maxPage = data.info.pages;
-    if (maxPage === 1) {
-      [...$pagination].forEach((button) => (button.style.display = "none"));
-    }
-    getCards(data.results, currUrl, $cards);
-  })
-  .catch((err) => console.log(err));
+updateCards();
 
 $form.addEventListener("submit", (event) => {
   event.preventDefault();
   searchValue = $formSearch.value;
   updateSearchProps("name", searchValue, searchValue !== "" ? "add" : "delete");
   clearCards();
-  getInfo(searchProps, currUrl)
-    .then((data) => {
-      maxPage = data.info.pages;
-      if (maxPage === 1) {
-        [...$pagination].forEach((button) => (button.style.display = "none"));
-      }
-      getCards(data.results, currUrl, $cards);
-    })
-    .catch((err) => {
-      console.log(err.message);
-      if (err.message === "Not found")
-        $cards.insertAdjacentHTML("beforeend", notFoundTemplate());
-    });
+  updateCards();
 });
 
 $filters.addEventListener("click", (event) => {
@@ -67,20 +78,12 @@ $filters.addEventListener("click", (event) => {
       event.target.classList.add("filter-selected");
       updateSearchProps(
         event.target.parentNode.previousElementSibling.textContent,
-        event.target.textContent,
+        event.target.textContent.toLowerCase(),
         "add"
       );
     }
     clearCards();
-    getInfo(searchProps, currUrl)
-      .then((data) => {
-        maxPage = data.info.pages;
-        if (maxPage === 1) {
-          [...$pagination].forEach((button) => (button.style.display = "none"));
-        }
-        getCards(data.results, currUrl, $cards);
-      })
-      .catch((err) => console.log(err));
+    updateCards();
   }
 });
 
@@ -89,42 +92,12 @@ $filters.addEventListener("click", (event) => {
     if (event.target.id === "pg-button-next") {
       searchProps.page += 1;
       clearCards();
-      getInfo(searchProps, currUrl)
-        .then((data) => {
-          maxPage = data.info.pages;
-          if (maxPage === 1) {
-            [...$pagination].forEach(
-              (button) => (button.style.display = "none")
-            );
-          }
-          getCards(data.results, currUrl, $cards);
-        })
-        .catch((err) => console.log(err));
-      if (searchProps.page === maxPage) {
-        event.target.style.display = "none";
-      } else {
-        [...$pagination].forEach((button) => (button.style.display = "flex"));
-      }
+      updateCards();
     }
     if (event.target.id === "pg-button-prev") {
       searchProps.page -= 1;
       clearCards();
-      getInfo(searchProps, currUrl)
-        .then((data) => {
-          maxPage = data.info.pages;
-          if (maxPage === 1) {
-            [...$pagination].forEach(
-              (button) => (button.style.display = "none")
-            );
-          }
-          getCards(data.results, currUrl, $cards);
-        })
-        .catch((err) => console.log(err));
-      if (searchProps.page === 1) {
-        event.target.style.display = "none";
-      } else {
-        [...$pagination].forEach((button) => (button.style.display = "flex"));
-      }
+      updateCards();
     }
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   })
