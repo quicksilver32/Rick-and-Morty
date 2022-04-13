@@ -112,7 +112,7 @@ export const clearCards = () => {
 };
 
 /**
- * Возравщает строку, соответвующую текущей странице (герои, эпизоды, локации)
+ * Возвращает строку, соответствующую текущей странице (герои, эпизоды, локации)
  * @param pathname - текущий url
  * @returns {string}
  */
@@ -126,4 +126,4 @@ export const getCurrPage = (pathname) => {
   if (pathname.includes("episode")) {
     return "episode";
   }
-}
+};

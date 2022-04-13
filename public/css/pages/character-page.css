@@ -78,3 +78,17 @@
 .info-section__link:hover {
     color: #F2E96B;
 }
+
+.episode {
+    margin-right: 10px;
+}
+
+.episodes-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.episode-code {
+    color: rgba(112, 128, 144, 0.65)
+}

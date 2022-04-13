@@ -3,7 +3,12 @@ import {
   getEpisodePageTemplate,
   getLocationPageTemplate,
 } from "./templates.js";
-import {getCards, getCurrPage, getIdFromURL, reformatEpisode} from "./utils.js";
+import {
+  getCards,
+  getCurrPage,
+  getIdFromURL,
+  reformatEpisode,
+} from "./utils.js";
 
 const currId = new URLSearchParams(window.location.search).get("id");
 const currUrl = getCurrPage(window.location.pathname);
@@ -52,7 +57,7 @@ getItem(currId, currUrl).then((data) => {
           rel="nofollow noopener noreferrer"
           class="info-section__link episode"
         >
-          ${item.name} (${item.episode}),
+          ${item.name} <span class="episode-code">(${item.episode})</span>
         </a>
       `;
             $episodes.insertAdjacentHTML("beforeend", episodeTemplate);
