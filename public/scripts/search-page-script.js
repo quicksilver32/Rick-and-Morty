@@ -18,20 +18,22 @@ const updateCards = () => {
   getInfo(searchProps, currUrl)
     .then((data) => {
       maxPage = data.info.pages;
-      [...$pagination].forEach((button) => (button.style.display = "flex"));
+      $pagination.forEach((button) => (button.style.display = "flex"));
       if (maxPage === 1) {
-        [...$pagination].forEach((button) => (button.style.display = "none"));
+        $pagination.forEach((button) => (button.style.display = "none"));
       }
       if (searchProps.page === maxPage) {
-        document.querySelector("#pg-button-next").style.display = "none";
+        document.querySelector(".pagination__button-next").style.display =
+          "none";
       }
       if (searchProps.page === 1) {
-        document.querySelector("#pg-button-prev").style.display = "none";
+        document.querySelector(".pagination__button-prev").style.display =
+          "none";
       }
       getCards(data.results, currUrl, $cards);
     })
     .catch((err) => {
-      [...$pagination].forEach((button) => (button.style.display = "none"));
+      $pagination.forEach((button) => (button.style.display = "none"));
       $cards.insertAdjacentHTML("beforeend", errorTemplate(err.message));
     });
 };
@@ -87,14 +89,15 @@ $filters.addEventListener("click", (event) => {
   }
 });
 
-[...$pagination].forEach((button) =>
+$pagination.forEach((button) =>
   button.addEventListener("click", (event) => {
-    if (event.target.id === "pg-button-next") {
+    console.log(event.target.classList);
+    if (event.target.classList.contains("pagination__button-next")) {
       searchProps.page += 1;
       clearCards();
       updateCards();
     }
-    if (event.target.id === "pg-button-prev") {
+    if (event.target.classList.contains("pagination__button-prev")) {
       searchProps.page -= 1;
       clearCards();
       updateCards();
