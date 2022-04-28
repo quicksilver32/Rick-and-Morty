@@ -1,5 +1,5 @@
 import { errorTemplate } from "./templates.js";
-import {getInfo, clearCards, getCards, getCurrPage} from "./utils.js";
+import { getInfo, clearCards, getCards, getCurrPage } from "./utils.js";
 
 const $cards = document.querySelector(".cards");
 const $form = document.querySelector(".search__form");
@@ -44,22 +44,22 @@ const updateCards = () => {
  * @param filterValue - значение фильтра
  * @param type - тип, "add" - добавляет фильтр, если его не было, переписывает значение, если уже был, "delete" - удаляет
  */
-const updateSearchProps = (filterName, filterValue, type) => {
+const updateSearchProps = (filterName, filterValue = null) => {
   const cleanFilterName = filterName.replaceAll(":", "").toLowerCase();
-  if (type === "add") {
+  if (filterValue !== null) {
     searchProps[cleanFilterName] = filterValue;
   } else {
     delete searchProps[cleanFilterName];
   }
 };
 
-updateSearchProps("page", 1, "add");
+updateSearchProps("page", 1);
 updateCards();
 
 $form.addEventListener("submit", (event) => {
   event.preventDefault();
   searchValue = $formSearch.value;
-  updateSearchProps("name", searchValue, searchValue !== "" ? "add" : "delete");
+  updateSearchProps("name", searchValue !== "" ? searchValue : null);
   clearCards();
   updateCards();
 });
@@ -69,9 +69,7 @@ $filters.addEventListener("click", (event) => {
     if (event.target.classList.contains("filter-selected")) {
       event.target.classList.remove("filter-selected");
       updateSearchProps(
-        event.target.parentNode.previousElementSibling.textContent,
-        event.target.textContent,
-        "delete"
+        event.target.parentNode.previousElementSibling.textContent
       );
     } else {
       [...event.target.parentNode.children].forEach((item) =>
@@ -80,8 +78,7 @@ $filters.addEventListener("click", (event) => {
       event.target.classList.add("filter-selected");
       updateSearchProps(
         event.target.parentNode.previousElementSibling.textContent,
-        event.target.textContent.toLowerCase(),
-        "add"
+        event.target.textContent.toLowerCase()
       );
     }
     clearCards();
