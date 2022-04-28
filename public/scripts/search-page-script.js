@@ -45,11 +45,11 @@ const updateCards = () => {
  * @param type - тип, "add" - добавляет фильтр, если его не было, переписывает значение, если уже был, "delete" - удаляет
  */
 const updateSearchProps = (filterName, filterValue, type) => {
-  filterName = filterName.replaceAll(":", "").toLowerCase();
+  const cleanFilterName = filterName.replaceAll(":", "").toLowerCase();
   if (type === "add") {
-    searchProps[filterName] = filterValue;
+    searchProps[cleanFilterName] = filterValue;
   } else {
-    delete searchProps[filterName];
+    delete searchProps[cleanFilterName];
   }
 };
 
