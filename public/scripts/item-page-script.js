@@ -40,13 +40,15 @@ getItem(currId, currUrl).then((data) => {
         if (Array.isArray(data)) {
           data.forEach((item) => {
             const episodeTemplate = `
-        <a
-          href="/episode.html?id=${item.id}"
-          rel="nofollow noopener noreferrer"
-          class="info-section__link episode"
-        >
-          ${item.name} <span class="episode-code">(${item.episode})</span>
-        </a>
+        <div class="episode-code-wrapper">
+          <a
+            href="/episode.html?id=${item.id}"
+            rel="nofollow noopener noreferrer"
+            class="info-section__link episode"
+          >
+            ${item.name} <span class="episode-code">(${item.episode})</span>
+          </a>
+        </div>
       `;
             $episodes.insertAdjacentHTML("beforeend", episodeTemplate);
           });
