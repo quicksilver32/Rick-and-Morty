@@ -15,6 +15,7 @@ let maxPage = 0;
  * Получает данные, обновляет кнопки пагинации, данные о результате, отрисовывает карточки или сообщение об ошибке
  */
 const updateCards = () => {
+  clearCards();
   getInfo(searchProps, currUrl)
     .then((data) => {
       maxPage = data.info.pages;
@@ -42,7 +43,6 @@ const updateCards = () => {
  * Формирует объект с фильтрами для поиска
  * @param filterName - имя фильтра
  * @param filterValue - значение фильтра
- * @param type - тип, "add" - добавляет фильтр, если его не было, переписывает значение, если уже был, "delete" - удаляет
  */
 const updateSearchProps = (filterName, filterValue = null) => {
   const cleanFilterName = filterName.replaceAll(":", "").toLowerCase();
@@ -60,7 +60,6 @@ $form.addEventListener("submit", (event) => {
   event.preventDefault();
   searchValue = $formSearch.value;
   updateSearchProps("name", searchValue !== "" ? searchValue : null);
-  clearCards();
   updateCards();
 });
 
@@ -72,7 +71,7 @@ $filters.addEventListener("click", (event) => {
         event.target.parentNode.previousElementSibling.textContent
       );
     } else {
-      [...event.target.parentNode.children].forEach((item) =>
+      event.target.parentNode.childrens.forEach((item) =>
         item.classList.remove("filter-selected")
       );
       event.target.classList.add("filter-selected");
@@ -81,24 +80,19 @@ $filters.addEventListener("click", (event) => {
         event.target.textContent.toLowerCase()
       );
     }
-    clearCards();
     updateCards();
   }
 });
 
 $pagination.forEach((button) =>
   button.addEventListener("click", (event) => {
-    console.log(event.target.classList);
     if (event.target.classList.contains("pagination__button-next")) {
       searchProps.page += 1;
-      clearCards();
-      updateCards();
     }
     if (event.target.classList.contains("pagination__button-prev")) {
       searchProps.page -= 1;
-      clearCards();
-      updateCards();
     }
+    updateCards();
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   })
 );

@@ -7,24 +7,12 @@ import {
   getCards,
   getCurrPage,
   getIdFromURL,
+  getItem,
   reformatEpisode,
 } from "./utils.js";
 
 const currId = new URLSearchParams(window.location.search).get("id");
 const currUrl = getCurrPage(window.location.pathname);
-
-/**
- * Получает данные по id персонажей/локаций/эпизодов
- * @param id - один или массив id
- * @param url - где надо искать
- * @returns {Promise<any>}
- */
-const getItem = async (id, url) => {
-  const response = await fetch(`https://rickandmortyapi.com/api/${url}/${id}`);
-  if (response.status === 200) {
-    return await response.json();
-  }
-};
 
 getItem(currId, currUrl).then((data) => {
   let template = "";

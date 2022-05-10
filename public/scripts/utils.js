@@ -50,6 +50,21 @@ export const getIdFromURL = (url) => {
 };
 
 /**
+ * Получает данные по id персонажей/локаций/эпизодов
+ * @param id - один или массив id
+ * @param url - где надо искать
+ * @returns {Promise<any>}
+ */
+export const getItem = async (id, url) => {
+  return fetch(`https://rickandmortyapi.com/api/${url}/${id}`).then(
+    (response) => {
+      if (response.status === 200) return response.json();
+      else throw new Error("Something went wrong :(");
+    }
+  );
+};
+
+/**
  * По данным с API формирует карточки и вставляет на страницу
  * @param data - данные с API
  * @param type - тип карточек
@@ -60,25 +75,20 @@ export const getCards = (data, type, $cards) => {
     let template = "";
     switch (type) {
       case "character":
-        fetch(
-          "https://rickandmortyapi.com/api/episode/" +
-            getIdFromURL(item.episode[0])
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            template = getCharacterCardTemplate(
-              item.image,
-              item.name,
-              item.id,
-              item.status,
-              item.species,
-              item.location.name,
-              getIdFromURL(item.location.url),
-              data.name,
-              data.id
-            );
-            $cards.insertAdjacentHTML("beforeend", template);
-          });
+        getItem(getIdFromURL(item.episode[0]), "episode").then((data) => {
+          template = getCharacterCardTemplate(
+            item.image,
+            item.name,
+            item.id,
+            item.status,
+            item.species,
+            item.location.name,
+            getIdFromURL(item.location.url),
+            data.name,
+            data.id
+          );
+          $cards.insertAdjacentHTML("beforeend", template);
+        });
         break;
       case "episode":
         template = getEpisodeCardTemplate(
@@ -106,7 +116,7 @@ export const getCards = (data, type, $cards) => {
  * Очищает содержимое элемента .cards за исключением строки поиска
  */
 export const clearCards = () => {
-  [...document.querySelectorAll(".card")].forEach((card) => card.remove());
+  document.querySelectorAll(".card").forEach((card) => card.remove());
   document.querySelector(".not-found") &&
     document.querySelector(".not-found").remove();
 };
