@@ -1,3 +1,26 @@
+const linkTemplate = (name, id, type) => {
+  return `
+    <a
+      href="${name === "unknown" ? "" : "/" + type + ".html?id=" + id}"
+      rel="nofollow noopener noreferrer"
+      class="info-section__link"
+      >${name}</a
+    >
+  `;
+};
+
+const headerLinkTemplate = (id, name, type) => {
+  return `
+    <a
+      href="/${type}.html?id=${id}"
+      rel="nofollow noopener noreferrer"
+      class="info-section__link"
+    >
+      <h2 class="info-section__title">${name}</h2>
+    </a>
+  `;
+};
+
 export const getCharacterCardTemplate = (
   image,
   name,
@@ -20,42 +43,18 @@ export const getCharacterCardTemplate = (
                 />
                 <div class="card__info">
                   <div class="info-section">
-                    <a
-                      href="/character.html?id=${id}"
-                      rel="nofollow noopener noreferrer"
-                      class="info-section__link"
-                    >
-                      <h2 class="info-section__title">${name}</h2>
-                    </a>
+                    ${headerLinkTemplate(id, name, "character")}
                     <span class="info-section__status">
                       <span class="status-icon ${status.toLowerCase()}"></span> ${status} - ${species}
                     </span>
                   </div>
                   <div class="info-section">
-                    <span class="info-section__text">Last known location:</span
-                    ><a
-                      href="${
-                        locationName === "unknown"
-                          ? ""
-                          : "/location.html?id=" + locationId
-                      }"
-                      rel="nofollow noopener noreferrer"
-                      class="info-section__link"
-                      >${locationName}</a
-                    >
+                    <span class="info-section__text">Last known location:</span>
+                    ${linkTemplate(locationName, locationId, "location")}
                   </div>
                   <div class="info-section">
-                    <span class="info-section__text">First seen in:</span
-                    ><a
-                      href="${
-                        originName === "unknown"
-                          ? ""
-                          : "/episode.html?id=" + originId
-                      }"
-                      rel="nofollow noopener noreferrer"
-                      class="info-section__link"
-                      >${originName}</a
-                    >
+                    <span class="info-section__text">First seen in:</span>
+                    ${linkTemplate(originName, originId, "episode")}
                   </div>
                 </div>
               </div>
@@ -67,13 +66,7 @@ export const getEpisodeCardTemplate = (id, name, episode, air_date) => {
             <div class="card card-short">
               <div class="card__info">
                 <div class="info-section">
-                  <a
-                    href="episode.html?id=${id}"
-                    rel="nofollow noopener noreferrer"
-                    class="info-section__link"
-                  >
-                    <h2>${name}</h2>
-                  </a>
+                  ${headerLinkTemplate(id, name, "episode")}
                 </div>
                 <div class="info-section">
                   <span class="info-section__text">Episode:</span>
@@ -93,13 +86,7 @@ export const getLocationCardTemplate = (id, name, dimension, type) => {
             <div class="card card-short">
               <div class="card__info">
                 <div class="info-section">
-                  <a
-                    href="location.html?id=${id}"
-                    rel="nofollow noopener noreferrer"
-                    class="info-section__link"
-                  >
-                    <h2>${name}</h2>
-                    </a>
+                  ${headerLinkTemplate(id, name, "location")}
                 </div>
                 <div class="info-section">
                     <span class="info-section__text">Dimension:</span>
@@ -157,30 +144,12 @@ export const getCharacterPageTemplate = (
                 </div>
                 <div class="info">
                   <div class="info-section">
-                    <span class="info-section__title">Origin location:</span
-                    ><a
-                      href="${
-                        originName === "unknown"
-                          ? ""
-                          : "/location.html?id=" + originId
-                      }"
-                      rel="nofollow noopener noreferrer"
-                      class="info-section__link"
-                      >${originName}</a
-                    >
+                    <span class="info-section__title">Origin location:</span>
+                    ${linkTemplate(originName, originId, "location")}
                   </div>
                   <div class="info-section">
-                    <span class="info-section__title">Last known location:</span
-                    ><a
-                      href="${
-                        locationName === "unknown"
-                          ? ""
-                          : "/location.html?id=" + locationId
-                      }"
-                      rel="nofollow noopener noreferrer"
-                      class="info-section__link"
-                      >${locationName}</a
-                    >
+                    <span class="info-section__title">Last known location:</span>
+                    ${linkTemplate(locationName, locationId, "location")}
                   </div>
                   <div class="info-section">
                     <span class="info-section__title">Episodes:</span>
