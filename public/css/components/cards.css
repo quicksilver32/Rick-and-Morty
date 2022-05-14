@@ -1,4 +1,5 @@
 .cards {
+    grid-column-start: 2;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

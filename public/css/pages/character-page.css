@@ -78,3 +78,15 @@
 .info-section__link:hover {
     color: #F2E96B;
 }
+
+.episode {
+    margin-right: 10px;
+}
+
+.episodes-wrapper {
+    column-count: 2;
+}
+
+.episode-code {
+    color: rgba(112, 128, 144, 0.65)
+}

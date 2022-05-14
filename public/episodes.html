@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/pages/search-page.css" />
     <link rel="stylesheet" href="css/components/search.css" />
     <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/pagination.css" />
     <link href="http://fonts.cdnfonts.com/css/krona-one" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -44,149 +45,25 @@
     </header>
     <main>
       <div class="main">
-        <div class="filter">
-          <p class="filter__name">Season:</p>
-          <div class="filter__container">
-            <button type="button" class="filter__value">1</button>
-            <button type="button" class="filter__value filter-selected">
-              2
-            </button>
-            <button type="button" class="filter__value">3</button>
-          </div>
-        </div>
         <div class="cards">
           <div class="search">
-            <input class="search__input" type="text" placeholder="Search" />
-            <button type="button" class="search__button">
-              <span class="material-icons search__icon">search</span>
-            </button>
+            <form class="search__form">
+              <input class="search__input" type="text" placeholder="Search" />
+              <button type="submit" class="search__button">
+                <span class="material-icons search__icon">search</span>
+              </button>
+            </form>
           </div>
-          <div class="card card-short">
-            <div class="card__info">
-              <div class="info-section">
-                <a
-                  href="episode.html"
-                  rel="nofollow noopener noreferrer"
-                  class="info-section__link"
-                >
-                  <h2>A Rickle in Time</h2>
-                </a>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Episode:</span>
-                <p class="description">Season 2 Episode 1</p>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Air date:</span>
-                <p class="description">July 26, 2015</p>
-              </div>
-            </div>
-          </div>
-          <div class="card card-short">
-            <div class="card__info">
-              <div class="info-section">
-                <a
-                  href="https://rickandmortyapi.com/api/episode/13"
-                  rel="nofollow noopener noreferrer"
-                  class="info-section__link"
-                >
-                  <h2>Mortynight Run</h2>
-                </a>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Episode:</span>
-                <p class="description">Season 2 Episode 2</p>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Air date:</span>
-                <p class="description">August 2, 2015</p>
-              </div>
-            </div>
-          </div>
-          <div class="card card-short">
-            <div class="card__info">
-              <div class="info-section">
-                <a
-                  href="https://rickandmortyapi.com/api/episode/14"
-                  rel="nofollow noopener noreferrer"
-                  class="info-section__link"
-                >
-                  <h2>Auto Erotic Assimilation</h2>
-                </a>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Episode:</span>
-                <p class="description">Season 2 Episode 3</p>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Air date:</span>
-                <p class="description">August 9, 2015</p>
-              </div>
-            </div>
-          </div>
-          <div class="card card-short">
-            <div class="card__info">
-              <div class="info-section">
-                <a
-                  href="https://rickandmortyapi.com/api/episode/15"
-                  rel="nofollow noopener noreferrer"
-                  class="info-section__link"
-                >
-                  <h2>Total Rickall</h2>
-                </a>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Episode:</span>
-                <p class="description">Season 2 Episode 4</p>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Air date:</span>
-                <p class="description">August 16, 2015</p>
-              </div>
-            </div>
-          </div>
-          <div class="card card-short">
-            <div class="card__info">
-              <div class="info-section">
-                <a
-                  href="https://rickandmortyapi.com/api/episode/15"
-                  rel="nofollow noopener noreferrer"
-                  class="info-section__link"
-                >
-                  <h2>Get Schwifty</h2>
-                </a>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Episode:</span>
-                <p class="description">Season 2 Episode 5</p>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Air date:</span>
-                <p class="description">August 23, 2015</p>
-              </div>
-            </div>
-          </div>
-          <div class="card card-short">
-            <div class="card__info">
-              <div class="info-section">
-                <a
-                  href="https://rickandmortyapi.com/api/episode/17"
-                  rel="nofollow noopener noreferrer"
-                  class="info-section__link"
-                >
-                  <h2>The Ricks Must Be Crazy</h2>
-                </a>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Episode:</span>
-                <p class="description">Season 2 Episode</p>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Air date:</span>
-                <p class="description">August 30, 2015</p>
-              </div>
-            </div>
-          </div>
+        </div>
+        <div class="pagination">
+          <button type="button" class="pagination__button pagination__button-prev">
+            <span class="material-icons">navigate_before</span>
+            Prev. page
+          </button>
+          <button type="button" class="pagination__button pagination__button-next">
+            Next page
+            <span class="material-icons">navigate_next</span>
+          </button>
         </div>
       </div>
     </main>
@@ -226,5 +103,6 @@
         </a>
       </div>
     </footer>
+    <script type="module" src="scripts/search-page-script.js"></script>
   </body>
 </html>

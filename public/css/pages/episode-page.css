@@ -3,16 +3,6 @@
     grid-template-columns: 1fr;
 }
 
-.episode {
-    margin-right: 10px;
-}
-
-.episodes-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
 .name {
     justify-self: center;
     text-decoration: underline;
@@ -29,9 +19,22 @@
     align-items: center;
 }
 
+.episode-nav-link {
+    color: black;
+    text-decoration: none;
+}
+
 .episode-nav-item:hover {
-    text-decoration: underline;
     cursor: pointer;
+}
+
+.episode-nav-link:hover {
+    text-decoration: underline;
+}
+
+.disabled {
+    color: gray;
+    pointer-events:none;
 }
 
 .episode-info {

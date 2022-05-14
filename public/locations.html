@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/pages/search-page.css" />
     <link rel="stylesheet" href="css/components/search.css" />
     <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/pagination.css" />
     <link href="http://fonts.cdnfonts.com/css/krona-one" rel="stylesheet" /><link
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
@@ -67,163 +68,38 @@
             <button type="button" class="filter__value">Death Star</button>
             <button type="button" class="filter__value">unknown</button>
           </div>
-          <p class="filter__name">Type:</p>
+          <p class="filter__name">Dimension:</p>
           <div class="filter__container">
-            <button type="button" class="filter__value">
-              Dimension C-500A
-            </button>
+            <button type="button" class="filter__value">Dimension C-500A</button>
             <button type="button" class="filter__value">Chair Dimension</button>
             <button type="button" class="filter__value">Pizza Dimension</button>
             <button type="button" class="filter__value">Tusk Dimension</button>
-            <button type="button" class="filter__value">
-              Evil Rick's Target Dimension
-            </button>
-            <button type="button" class="filter__value">
-              Dimension D716-C
-            </button>
-            <button type="button" class="filter__value">Dimension J19ζ7</button>
+            <button type="button" class="filter__value">Evil Rick's Target Dimension</button>
+            <button type="button" class="filter__value">Dimension D716-C</button>
+            <button type="button" class="filter__value">Dimension J197</button>
             <button type="button" class="filter__value">Dimension D716</button>
             <button type="button" class="filter__value">unknown</button>
           </div>
         </div>
         <div class="cards">
           <div class="search">
-            <input class="search__input" type="text" placeholder="Search" />
-            <button type="button" class="search__button">
-              <span class="material-icons search__icon">search</span>
-            </button>
+            <form class="search__form">
+              <input class="search__input" type="text" placeholder="Search"/>
+              <button type="submit" class="search__button">
+                <span class="material-icons search__icon">search</span>
+              </button>
+            </form>
           </div>
-          <div class="card card-short">
-            <div class="card__info">
-              <div class="info-section">
-                <a
-                  href="location.html"
-                  rel="nofollow noopener noreferrer"
-                  class="info-section__link"
-                >
-                  <h2>Earth (C-137)</h2>
-                </a>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Dimension:</span>
-                <p class="description">Dimension C-137</p>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Type:</span>
-                <p class="description">Planet</p>
-              </div>
-            </div>
-          </div>
-          <div class="card card-short">
-            <div class="card__info">
-              <div class="info-section">
-                <a
-                  href="https://rickandmortyapi.com/api/location/13"
-                  rel="nofollow noopener noreferrer"
-                  target="_blank"
-                  class="info-section__link"
-                >
-                  <h2>Nuptia 4</h2>
-                </a>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Dimension:</span>
-                <p class="description">unknown</p>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Type:</span>
-                <p class="description">Planet</p>
-              </div>
-            </div>
-          </div>
-          <div class="card card-short">
-            <div class="card__info">
-              <div class="info-section">
-                <a
-                  href="https://rickandmortyapi.com/api/location/23"
-                  rel="nofollow noopener noreferrer"
-                  target="_blank"
-                  class="info-section__link"
-                >
-                  <h2>Earth (C-500A)</h2>
-                </a>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Dimension:</span>
-                <p class="description">Dimension C-500A</p>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Type:</span>
-                <p class="description">Planet</p>
-              </div>
-            </div>
-          </div>
-          <div class="card card-short">
-            <div class="card__info">
-              <div class="info-section">
-                <a
-                  href="https://rickandmortyapi.com/api/location/24"
-                  rel="nofollow noopener noreferrer"
-                  target="_blank"
-                  class="info-section__link"
-                >
-                  <h2>Rick's Battery Microverse</h2>
-                </a>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Dimension:</span>
-                <p class="description">Replacement Dimension</p>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Type:</span>
-                <p class="description">Microverse</p>
-              </div>
-            </div>
-          </div>
-          <div class="card card-short">
-            <div class="card__info">
-              <div class="info-section">
-                <a
-                  href="https://rickandmortyapi.com/api/location/25"
-                  rel="nofollow noopener noreferrer"
-                  target="_blank"
-                  class="info-section__link"
-                >
-                  <h2>The Menagerie</h2>
-                </a>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Dimension:</span>
-                <p class="description">unknown</p>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Type:</span>
-                <p class="description">Menagerie</p>
-              </div>
-            </div>
-          </div>
-          <div class="card card-short">
-            <div class="card__info">
-              <div class="info-section">
-                <a
-                  href="https://rickandmortyapi.com/api/location/35"
-                  rel="nofollow noopener noreferrer"
-                  target="_blank"
-                  class="info-section__link"
-                >
-                  <h2>Planet Squanch</h2>
-                </a>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Dimension:</span>
-                <p class="description">Replacement Dimension</p>
-              </div>
-              <div class="info-section">
-                <span class="info-section__text">Type:</span>
-                <p class="description">Planet</p>
-              </div>
-            </div>
-          </div>
+        </div>
+        <div class="pagination">
+          <button type="button" class="pagination__button pagination__button-prev">
+            <span class="material-icons">navigate_before</span>
+            Prev. page
+          </button>
+          <button type="button" class="pagination__button pagination__button-next">
+            Next page
+            <span class="material-icons">navigate_next</span>
+          </button>
         </div>
       </div>
     </main>
@@ -263,5 +139,6 @@
         </a>
       </div>
     </footer>
+    <script type="module" src="scripts/search-page-script.js"></script>
   </body>
 </html>

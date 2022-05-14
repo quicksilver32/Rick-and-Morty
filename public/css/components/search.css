@@ -4,6 +4,10 @@
     margin-left: 36px;
 }
 
+.search__form {
+    display: contents;
+}
+
 .search__button {
     background: transparent;
     border: 0;
