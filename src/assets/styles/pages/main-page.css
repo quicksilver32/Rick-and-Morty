@@ -1,0 +1,13 @@
+.main {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: relative;
+    padding: 0 10px;
+}
+
+.main__img {
+    justify-self: center;
+    max-width: 60%;
+}

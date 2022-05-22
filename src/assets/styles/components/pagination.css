@@ -1,0 +1,33 @@
+.pagination {
+    grid-column-start: 2;
+    justify-self: center;
+    display: flex;
+}
+
+.pagination__button {
+    background: rgba(200, 135, 232, 0.5);
+    border: solid 3px rgba(111, 57, 147, 0.5);
+    outline: none;
+    border-radius: 9px;
+    height: 60px;
+    cursor: pointer;
+    line-height: 3.2;
+    padding: 5px;
+    margin: 10px;
+    font-family: "Krona One", serif;
+    display: flex;
+    align-items: center;
+}
+
+.pagination__button:hover {
+    background: rgba(111, 57, 147, 0.5);
+}
+
+.disabled {
+    color: gray;
+    pointer-events:none;
+}
+
+#pg-button-prev {
+    display: none;
+}

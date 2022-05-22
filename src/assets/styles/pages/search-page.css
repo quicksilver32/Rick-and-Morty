@@ -1,0 +1,11 @@
+.main {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 3fr;
+    position: relative;
+    padding: 0 10px;
+}
+
+.not-found {
+    margin: 5em;
+}
