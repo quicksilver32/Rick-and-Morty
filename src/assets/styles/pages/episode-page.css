@@ -34,7 +34,7 @@
 
 .disabled {
     color: gray;
-    pointer-events:none;
+    pointer-events: none;
 }
 
 .episode-info {
