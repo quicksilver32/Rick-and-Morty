@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import "../../assets/styles/pages/episode-page.css";
 import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 import CharacterCard from "../components/CharacterCard";
+import { getIdFromURL, getItems } from "../utils/utils";
 
 const EpisodePage = () => {
   const { id } = useParams();
@@ -10,16 +11,18 @@ const EpisodePage = () => {
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/episode/" + id)
-      .then((response) => response.json())
+    getItems(id, "episode")
       .then((result) => {
         setInfo(result);
-        return result.characters.map((item) => item.split("/").slice(-1)[0]);
+        return result.characters.map((item) => getIdFromURL(item));
       })
-      .then((ids) => fetch("https://rickandmortyapi.com/api/character/" + ids))
-      .then((response) => response.json())
+      .then((ids) => getItems(ids, "character"))
       .then((result) => {
-        setCharacters(result);
+        if (result.id) {
+          setCharacters([result]);
+        } else {
+          setCharacters(result);
+        }
       });
   }, [id]);
 

@@ -6,6 +6,7 @@ import CharacterCard from "../components/CharacterCard";
 import LocationCard from "../components/LocationCard";
 import EpisodeCard from "../components/EpisodeCard";
 import Pagination from "../components/Pagination";
+import { getItems } from "../utils/utils";
 
 const SearchPage = ({ type }) => {
   const [searchProps, setSearchProps] = useState({});
@@ -14,7 +15,7 @@ const SearchPage = ({ type }) => {
   const [error, setError] = useState({ status: false, msg: "" });
 
   useEffect(() => {
-    let fetchUrl = "https://rickandmortyapi.com/api/" + type;
+    let fetchUrl = "";
     if (Object.keys(searchProps).length !== 0) {
       fetchUrl += "/?";
       const urlParams = new URLSearchParams();
@@ -23,13 +24,7 @@ const SearchPage = ({ type }) => {
       }
       fetchUrl += urlParams.toString();
     }
-    fetch(fetchUrl)
-      .then((response) => {
-        if (response.status === 200) return response.json();
-        if (response.status === 404)
-          throw new Error("There's no data for your query :(");
-        else throw new Error("Something went wrong :(");
-      })
+    getItems(fetchUrl, type)
       .then((result) => {
         setError({ status: false, msg: "" });
         setData(result);
@@ -74,7 +69,7 @@ const SearchPage = ({ type }) => {
           data.info.next.includes("episode") &&
           type === "episode" &&
           data.results.map((item) => <EpisodeCard info={item} />)}
-        {error.status && <p className="not-found">${error.msg}</p>}
+        {error.status && <p className="not-found">{error.msg}</p>}
       </div>
       {!error.status && data.info && (
         <Pagination

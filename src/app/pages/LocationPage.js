@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CharacterCard from "../components/CharacterCard";
+import { getIdFromURL, getItems } from "../utils/utils";
 
 const LocationPage = () => {
   const { id } = useParams();
@@ -8,16 +9,18 @@ const LocationPage = () => {
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/location/" + id)
-      .then((response) => response.json())
+    getItems(id, "location")
       .then((result) => {
         setInfo(result);
-        return result.residents.map((item) => item.split("/").slice(-1)[0]);
+        return result.residents.map((item) => getIdFromURL(item));
       })
-      .then((ids) => fetch("https://rickandmortyapi.com/api/character/" + ids))
-      .then((response) => response.json())
+      .then((ids) => getItems(ids, "character"))
       .then((result) => {
-        setCharacters(result);
+        if (result.id) {
+          setCharacters([result]);
+        } else {
+          setCharacters(result);
+        }
       });
   }, [id]);
 

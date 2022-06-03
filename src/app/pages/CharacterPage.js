@@ -1,39 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../../assets/styles/pages/character-page.css";
-
-const linkTemplate = (name, id, type) => {
-  return (
-    <Link
-      to={name === "unknown" ? "" : "/" + type + "/" + id}
-      className="info-section__link"
-    >
-      {name}
-    </Link>
-  );
-};
+import { getIdFromURL, getItems, LinkTemplate } from "../utils/utils";
 
 const CharacterPage = () => {
   const { id } = useParams();
   const [info, setInfo] = useState();
   const [episodes, setEpisodes] = useState([]);
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character/" + id)
-      .then((response) => response.json())
+    getItems(id, "character")
       .then((result) => {
         setInfo(result);
-        return result.episode.map((item) => item.split("/").slice(-1)[0]);
+        return result.episode.map((item) => getIdFromURL(item));
       })
-      .then((ids) => fetch("https://rickandmortyapi.com/api/episode/" + ids))
-      .then((response) => response.json())
+      .then((ids) => getItems(ids, "episode"))
       .then((result) => {
-        setEpisodes(result);
+        if (result.id) {
+          setEpisodes([result]);
+        } else {
+          setEpisodes(result);
+        }
       });
   }, [id]);
 
   return (
     <div className="main">
-      {Object.keys(info).length !== 0 && (
+      {info && (
         <>
           <div className="first-section">
             <div className="info-section">
@@ -68,13 +60,13 @@ const CharacterPage = () => {
             <div className="info">
               <div className="info-section">
                 <span className="info-section__title">Origin location:</span>
-                {linkTemplate(info.origin.name, info.origin.id, "location")}
+                {LinkTemplate(info.origin.name, info.origin.id, "location")}
               </div>
               <div className="info-section">
                 <span className="info-section__title">
                   Last known location:
                 </span>
-                {linkTemplate(info.location.name, info.location.id, "location")}
+                {LinkTemplate(info.location.name, info.location.id, "location")}
               </div>
               <div className="info-section">
                 <span className="info-section__title">Episodes:</span>
