@@ -42,7 +42,9 @@ const LocationPage = () => {
           <div className="info">
             <div className="cards">
               {characters.length !== 0 &&
-                characters.map((item) => <CharacterCard info={item} />)}
+                characters.map((item) => (
+                  <CharacterCard key={item.id} info={item} />
+                ))}
             </div>
           </div>
         </>

@@ -24,7 +24,7 @@ const Filter = ({ filters, updateSearchProps }) => {
     <div className="filter">
       {Object.keys(filters).map((item) => {
         return (
-          <>
+          <div key={item}>
             <p className="filter__name">{item}:</p>
             <div className="filter__container">
               {filters[item].map((value) => (
@@ -37,7 +37,7 @@ const Filter = ({ filters, updateSearchProps }) => {
                 </button>
               ))}
             </div>
-          </>
+          </div>
         );
       })}
     </div>

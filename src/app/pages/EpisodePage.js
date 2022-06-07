@@ -32,9 +32,11 @@ const EpisodePage = () => {
         <>
           <div className="episode-nav">
             <span className="episode-nav-item">
-              <NavigateBefore className={info.id === 1 && "disabled"} />
+              <NavigateBefore className={info.id === 1 ? "disabled" : ""} />
               <Link
-                className={"episode-nav-link " + (info.id === 1 && "disabled")}
+                className={
+                  "episode-nav-link " + (info.id === 1 ? "disabled" : "")
+                }
                 to={`/episode/${info.id - 1}`}
               >
                 Prev. Episode
@@ -43,12 +45,14 @@ const EpisodePage = () => {
             <h1 className="name">{info.name}</h1>
             <span className="episode-nav-item">
               <Link
-                className={"episode-nav-link " + (info.id === 51 && "disabled")}
+                className={
+                  "episode-nav-link " + (info.id === 51 ? "disabled" : "")
+                }
                 to={`/episode/${info.id + 1}`}
               >
                 Next Episode
               </Link>
-              <NavigateNext className={info.id === 51 && "disabled"} />
+              <NavigateNext className={info.id === 51 ? "disabled" : ""} />
             </span>
           </div>
           <div className="episode-info">
@@ -64,7 +68,9 @@ const EpisodePage = () => {
           <div className="info">
             <div className="cards">
               {characters.length !== 0 &&
-                characters.map((item) => <CharacterCard info={item} />)}
+                characters.map((item) => (
+                  <CharacterCard key={item.id} info={item} />
+                ))}
             </div>
           </div>
         </>

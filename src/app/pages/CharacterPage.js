@@ -73,7 +73,7 @@ const CharacterPage = () => {
                 <div className="episodes-wrapper">
                   {episodes.length !== 0 &&
                     episodes.map((item) => (
-                      <div className="episode-code-wrapper">
+                      <div key={item.id} className="episode-code-wrapper">
                         <Link
                           to={`/episode/id=${item.id}`}
                           className="info-section__link episode"

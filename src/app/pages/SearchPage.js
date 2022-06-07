@@ -60,15 +60,19 @@ const SearchPage = ({ type }) => {
         {data.results &&
           data.info.next.includes("character") &&
           type === "character" &&
-          data.results.map((item) => <CharacterCard info={item} />)}
+          data.results.map((item) => (
+            <CharacterCard key={item.id} info={item} />
+          ))}
         {data.results &&
           data.info.next.includes("location") &&
           type === "location" &&
-          data.results.map((item) => <LocationCard info={item} />)}
+          data.results.map((item) => (
+            <LocationCard key={item.id} info={item} />
+          ))}
         {data.results &&
           data.info.next.includes("episode") &&
           type === "episode" &&
-          data.results.map((item) => <EpisodeCard info={item} />)}
+          data.results.map((item) => <EpisodeCard key={item.id} info={item} />)}
         {error.status && <p className="not-found">{error.msg}</p>}
       </div>
       {!error.status && data.info && (
