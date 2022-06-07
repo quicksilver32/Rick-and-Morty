@@ -25,7 +25,7 @@ const LocationPage = () => {
   }, [id]);
 
   return (
-    <div className="main">
+    <div className="main-location">
       {Object.keys(info).length !== 0 && (
         <>
           <h1 className="name">{info.name}</h1>

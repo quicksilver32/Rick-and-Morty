@@ -27,7 +27,7 @@ const EpisodePage = () => {
   }, [id]);
 
   return (
-    <div className="main">
+    <div className="main-episode">
       {Object.keys(info).length !== 0 && (
         <>
           <div className="episode-nav">

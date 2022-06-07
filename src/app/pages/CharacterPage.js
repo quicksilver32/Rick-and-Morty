@@ -24,7 +24,7 @@ const CharacterPage = () => {
   }, [id]);
 
   return (
-    <div className="main">
+    <div className="main-character">
       {info && (
         <>
           <div className="first-section">
@@ -59,24 +59,36 @@ const CharacterPage = () => {
             </div>
             <div className="info">
               <div className="info-section">
-                <span className="info-section__title">Origin location:</span>
-                {LinkTemplate(info.origin.name, info.origin.id, "location")}
+                <span className="info-section-page__title">
+                  Origin location:
+                </span>
+                {LinkTemplate(
+                  info.origin.name,
+                  info.origin.id,
+                  "location",
+                  true
+                )}
               </div>
               <div className="info-section">
-                <span className="info-section__title">
+                <span className="info-section-page__title">
                   Last known location:
                 </span>
-                {LinkTemplate(info.location.name, info.location.id, "location")}
+                {LinkTemplate(
+                  info.location.name,
+                  info.location.id,
+                  "location",
+                  true
+                )}
               </div>
               <div className="info-section">
-                <span className="info-section__title">Episodes:</span>
+                <span className="info-section-page__title">Episodes:</span>
                 <div className="episodes-wrapper">
                   {episodes.length !== 0 &&
                     episodes.map((item) => (
                       <div key={item.id} className="episode-code-wrapper">
                         <Link
                           to={`/episode/id=${item.id}`}
-                          className="info-section__link episode"
+                          className="info-section-page__link episode"
                         >
                           {item.name}
                           <span className="episode-code">({item.episode})</span>

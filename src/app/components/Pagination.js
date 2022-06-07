@@ -2,7 +2,7 @@ import React from "react";
 import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 import "../../assets/styles/components/pagination.css";
 
-const Pagination = ({ updateSearchProps, currPage, maxPages, setPage }) => {
+const Pagination = ({ updateSearchProps, currPage, setPage, prev, next }) => {
   const handleClick = (event) => {
     if (event.target.classList.contains("pagination__button-next")) {
       updateSearchProps("page", currPage + 1);
@@ -16,7 +16,7 @@ const Pagination = ({ updateSearchProps, currPage, maxPages, setPage }) => {
 
   return (
     <div className="pagination">
-      {currPage !== 1 && (
+      {prev !== null && (
         <button
           type="button"
           className="pagination__button pagination__button-prev"
@@ -26,7 +26,7 @@ const Pagination = ({ updateSearchProps, currPage, maxPages, setPage }) => {
           Prev. page
         </button>
       )}
-      {currPage !== maxPages && (
+      {next !== null && (
         <button
           type="button"
           className="pagination__button pagination__button-next"

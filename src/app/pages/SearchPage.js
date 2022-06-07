@@ -6,7 +6,7 @@ import CharacterCard from "../components/CharacterCard";
 import LocationCard from "../components/LocationCard";
 import EpisodeCard from "../components/EpisodeCard";
 import Pagination from "../components/Pagination";
-import { getItems } from "../utils/utils";
+import { getItems, filters } from "../utils/utils";
 
 const SearchPage = ({ type }) => {
   const [searchProps, setSearchProps] = useState({});
@@ -47,30 +47,21 @@ const SearchPage = ({ type }) => {
   };
 
   return (
-    <div className="main">
-      <Filter
-        filters={{
-          status: ["alive", "dead", "unknown"],
-          gender: ["male", "female", "genderless", "unknown"],
-        }}
-        updateSearchProps={updateSearchProps}
-      />
+    <div className="main-search">
+      <Filter filters={filters[type]} updateSearchProps={updateSearchProps} />
       <div className="cards">
         <Search updateSearchProps={updateSearchProps} />
         {data.results &&
-          data.info.next.includes("character") &&
           type === "character" &&
           data.results.map((item) => (
             <CharacterCard key={item.id} info={item} />
           ))}
         {data.results &&
-          data.info.next.includes("location") &&
           type === "location" &&
           data.results.map((item) => (
             <LocationCard key={item.id} info={item} />
           ))}
         {data.results &&
-          data.info.next.includes("episode") &&
           type === "episode" &&
           data.results.map((item) => <EpisodeCard key={item.id} info={item} />)}
         {error.status && <p className="not-found">{error.msg}</p>}
@@ -79,8 +70,9 @@ const SearchPage = ({ type }) => {
         <Pagination
           updateSearchProps={updateSearchProps}
           currPage={page}
-          maxPage={data.info.pages}
           setPage={setPage}
+          prev={data.info.prev}
+          next={data.info.next}
         />
       )}
     </div>
