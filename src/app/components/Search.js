@@ -7,11 +7,9 @@ const Search = ({ updateSearchProps }) => {
 
   const handleChange = (event) => {
     setValue(event.target.value);
-    console.log(event.target.value);
   };
 
   const handleSubmit = (event) => {
-    console.log(value);
     event.preventDefault();
     updateSearchProps("name", value !== "" ? value : null);
   };

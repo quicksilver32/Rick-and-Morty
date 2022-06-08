@@ -49,7 +49,7 @@ const CharacterPage = () => {
               <span className="species__value">{info.type}</span>
               <span className="species__value">
                 <img
-                  src={require(`../../assets/images/${info.gender.toLowerCase()}.png`)}
+                  src={`../images/${info.gender.toLowerCase()}.png`}
                   alt="male"
                   height="30"
                   width="30"

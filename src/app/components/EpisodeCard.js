@@ -5,7 +5,7 @@ import { HeaderLinkTemplate } from "../utils/utils";
 
 const EpisodeCard = ({ info }) => {
   return (
-    <div key={info.id} className="card card-short">
+    <div className="card card-short">
       <div className="card__info">
         <div className="info-section">
           <HeaderLinkTemplate id={info.id} name={info.name} type="episode" />
