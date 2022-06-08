@@ -28,7 +28,7 @@ const CharacterCard = ({ info }) => {
       />
       <div className="card__info">
         <div className="info-section">
-          {HeaderLinkTemplate(info.id, info.name, "character")}
+          <HeaderLinkTemplate id={info.id} name={info.name} type="character" />
           <span className="info-section__status">
             <span className={`status-icon ${info.status.toLowerCase()}`} />
             {info.status} - {info.species}
@@ -36,15 +36,15 @@ const CharacterCard = ({ info }) => {
         </div>
         <div className="info-section">
           <span className="info-section__text">Last known location:</span>
-          {LinkTemplate(
-            info.location.name,
-            getIdFromURL(info.location.url),
-            "location"
-          )}
+          <LinkTemplate
+            name={info.location.name}
+            id={getIdFromURL(info.location.url)}
+            type="location"
+          />
         </div>
         <div className="info-section">
           <span className="info-section__text">First seen in:</span>
-          {LinkTemplate(episode.name, episode.id, "episode")}
+          <LinkTemplate name={episode.name} id={episode.id} type="episode" />
         </div>
       </div>
     </div>

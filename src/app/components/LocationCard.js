@@ -8,7 +8,7 @@ const LocationCard = ({ info }) => {
     <div key={info.id} className="card card-short">
       <div className="card__info">
         <div className="info-section">
-          {HeaderLinkTemplate(info.id, info.name, "location")}
+          <HeaderLinkTemplate id={info.id} name={info.name} type="location" />
         </div>
         <div className="info-section">
           <span className="info-section__text">Dimension:</span>

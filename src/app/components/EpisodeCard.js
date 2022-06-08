@@ -8,7 +8,7 @@ const EpisodeCard = ({ info }) => {
     <div key={info.id} className="card card-short">
       <div className="card__info">
         <div className="info-section">
-          {HeaderLinkTemplate(info.id, info.name, "episode")}
+          <HeaderLinkTemplate id={info.id} name={info.name} type="episode" />
         </div>
         <div className="info-section">
           <span className="info-section__text">Episode:</span>

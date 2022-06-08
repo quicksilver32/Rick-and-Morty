@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
 
-export const LinkTemplate = (name, id, type, isPage = false) => {
+export const LinkTemplate = ({ name, id, type, isPage = false }) => {
   return (
     <Link
       to={name === "unknown" ? "" : "/" + type + "/" + id}
@@ -12,7 +12,7 @@ export const LinkTemplate = (name, id, type, isPage = false) => {
   );
 };
 
-export const HeaderLinkTemplate = (id, name, type, isPage = false) => {
+export const HeaderLinkTemplate = ({ id, name, type, isPage = false }) => {
   return (
     <Link
       to={name === "unknown" ? "" : "/" + type + "/" + id}

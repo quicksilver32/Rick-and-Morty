@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CharacterCard from "../components/CharacterCard";
 import { getIdFromURL, getItems } from "../utils/utils";
+import "../../assets/styles/pages/location-page.css";
 
 const LocationPage = () => {
   const { id } = useParams();

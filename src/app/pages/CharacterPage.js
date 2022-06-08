@@ -62,23 +62,23 @@ const CharacterPage = () => {
                 <span className="info-section-page__title">
                   Origin location:
                 </span>
-                {LinkTemplate(
-                  info.origin.name,
-                  info.origin.id,
-                  "location",
-                  true
-                )}
+                <LinkTemplate
+                  name={info.origin.name}
+                  id={info.origin.id}
+                  type="location"
+                  isPage={true}
+                />
               </div>
               <div className="info-section">
                 <span className="info-section-page__title">
                   Last known location:
                 </span>
-                {LinkTemplate(
-                  info.location.name,
-                  info.location.id,
-                  "location",
-                  true
-                )}
+                <LinkTemplate
+                  name={info.location.name}
+                  id={info.location.id}
+                  type="location"
+                  isPage={true}
+                />
               </div>
               <div className="info-section">
                 <span className="info-section-page__title">Episodes:</span>
