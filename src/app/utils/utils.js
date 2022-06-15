@@ -32,14 +32,16 @@ export const getIdFromURL = (url) => {
 };
 
 export const getItems = async (id, url) => {
-  return fetch(`https://rickandmortyapi.com/api/${url}/${id}`).then(
-    (response) => {
+  return fetch(`https://rickandmortyapi.com/api/${url}/${id}`)
+    .then((response) => {
       if (response.status === 200) return response.json();
       if (response.status === 404)
         throw new Error("There's no data for your query :(");
-      else throw new Error("Something went wrong :(");
-    }
-  );
+      else throw new Error("Error while loading data, try to reload page...");
+    })
+    .catch(() => {
+      throw new Error("Error while loading data, try to reload page...");
+    });
 };
 
 export const filters = {
