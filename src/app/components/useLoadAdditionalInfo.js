@@ -34,6 +34,9 @@ export const useLoadAdditionalInfo = (id, type) => {
         setLoading(false);
       })
       .catch((err) => {
+        if (isCancelled) {
+          return;
+        }
         setInfo({});
         setAdditionalData([]);
         setError({ status: true, msg: err.message });
