@@ -30,6 +30,9 @@ export const useLoadInfo = (searchProps, type) => {
         setLoading(false);
       })
       .catch((err) => {
+        if (isCancelled) {
+          return;
+        }
         setData([]);
         setError({ status: true, msg: err.message });
         setLoading(false);
