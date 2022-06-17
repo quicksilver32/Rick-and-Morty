@@ -33,8 +33,6 @@ const SearchPage = ({ type }) => {
     }
   };
 
-  console.log(error);
-
   return (
     <div className="main-search">
       <Filter filters={filters[type]} updateSearchProps={updateSearchProps} />
