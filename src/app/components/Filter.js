@@ -1,22 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../assets/styles/components/filters.css";
 
 const Filter = ({ filters, updateSearchProps }) => {
-  const handleClick = (event) => {
-    if (event.target.classList.contains("filter-selected")) {
-      event.target.classList.remove("filter-selected");
-      updateSearchProps(
-        event.target.parentNode.previousElementSibling.textContent
-      );
+  const [checkedFilters, setCheckedFilters] = useState({});
+
+  const handleClick = (event, item, value) => {
+    if (checkedFilters[item] === value) {
+      setCheckedFilters({ ...checkedFilters, [item]: null });
+      updateSearchProps(item);
     } else {
-      [...event.target.parentNode.children].forEach((item) =>
-        item.classList.remove("filter-selected")
-      );
-      event.target.classList.add("filter-selected");
-      updateSearchProps(
-        event.target.parentNode.previousElementSibling.textContent,
-        event.target.textContent.toLowerCase()
-      );
+      setCheckedFilters({ ...checkedFilters, [item]: value });
+      updateSearchProps(item, value.toLowerCase());
     }
   };
 
@@ -30,8 +24,11 @@ const Filter = ({ filters, updateSearchProps }) => {
               {filters[item].map((value) => (
                 <button
                   key={value}
-                  className="filter__value"
-                  onClick={(e) => handleClick(e)}
+                  className={
+                    "filter__value" +
+                    (checkedFilters[item] === value ? " filter-selected" : "")
+                  }
+                  onClick={(e) => handleClick(e, item, value)}
                 >
                   {value}
                 </button>
