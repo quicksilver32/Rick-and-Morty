@@ -12,9 +12,9 @@ const CharacterCard = ({ info }) => {
   const [episode, setEpisode] = useState({});
 
   useEffect(() => {
-    getItems(getIdFromURL(info.episode[0]), "episode").then((result) =>
-      setEpisode(result)
-    );
+    getItems(getIdFromURL(info.episode[0]), "episode")
+      .then((result) => setEpisode(result))
+      .catch(() => setEpisode({}));
   }, []);
 
   return (

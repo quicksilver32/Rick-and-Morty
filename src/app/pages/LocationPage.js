@@ -1,33 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import CharacterCard from "../components/CharacterCard";
-import { getIdFromURL, getItems } from "../utils/utils";
 import "../../assets/styles/pages/location-page.css";
+import { useLoadAdditionalInfo } from "../components/useLoadAdditionalInfo";
 
 const LocationPage = () => {
   const { id } = useParams();
-  const [info, setInfo] = useState({});
-  const [characters, setCharacters] = useState([]);
-
-  useEffect(() => {
-    getItems(id, "location")
-      .then((result) => {
-        setInfo(result);
-        return result.residents.map((item) => getIdFromURL(item));
-      })
-      .then((ids) => getItems(ids, "character"))
-      .then((result) => {
-        if (result.id) {
-          setCharacters([result]);
-        } else {
-          setCharacters(result);
-        }
-      });
-  }, [id]);
+  const { loading, info, error, additionalData } = useLoadAdditionalInfo(
+    id,
+    "location"
+  );
 
   return (
     <div className="main-location">
-      {Object.keys(info).length !== 0 && (
+      {!loading && !error.status && (
         <>
           <h1 className="name">{info.name}</h1>
           <div className="episode-info">
@@ -42,14 +28,15 @@ const LocationPage = () => {
           </div>
           <div className="info">
             <div className="cards">
-              {characters.length !== 0 &&
-                characters.map((item) => (
+              {additionalData.length !== 0 &&
+                additionalData.map((item) => (
                   <CharacterCard key={item.id} info={item} />
                 ))}
             </div>
           </div>
         </>
       )}
+      {error.status && <p className="not-found">{error.msg}</p>}
     </div>
   );
 };
