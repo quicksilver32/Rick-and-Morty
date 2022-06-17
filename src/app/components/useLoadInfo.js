@@ -10,7 +10,9 @@ export const useLoadInfo = (searchProps, type) => {
     let isCancelled = false;
     setLoading(true);
     let fetchUrl = "";
-    if (Object.keys(searchProps).length !== 0) {
+    if (typeof searchProps === "string") {
+      fetchUrl += searchProps;
+    } else if (Object.keys(searchProps).length !== 0) {
       fetchUrl += "/?";
       const urlParams = new URLSearchParams();
       for (let key in searchProps) {

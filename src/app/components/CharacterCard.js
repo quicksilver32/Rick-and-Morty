@@ -1,21 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../../assets/styles/components/cards.css";
 import "../../assets/styles/components/status-icon.css";
-import {
-  getIdFromURL,
-  getItems,
-  HeaderLinkTemplate,
-  LinkTemplate,
-} from "../utils/utils";
+import { getIdFromURL, HeaderLinkTemplate, LinkTemplate } from "../utils/utils";
+import { useLoadInfo } from "./useLoadInfo";
 
 const CharacterCard = ({ info }) => {
-  const [episode, setEpisode] = useState({});
-
-  useEffect(() => {
-    getItems(getIdFromURL(info.episode[0]), "episode")
-      .then((result) => setEpisode(result))
-      .catch(() => setEpisode({}));
-  }, []);
+  const { loading, data, error } = useLoadInfo(
+    getIdFromURL(info.episode[0]),
+    "episode"
+  );
 
   return (
     <div key={info.id} className="card">
@@ -44,7 +37,10 @@ const CharacterCard = ({ info }) => {
         </div>
         <div className="info-section">
           <span className="info-section__text">First seen in:</span>
-          <LinkTemplate name={episode.name} id={episode.id} type="episode" />
+          {!loading && !error.status && (
+            <LinkTemplate name={data.name} id={data.id} type="episode" />
+          )}
+          {error.status && <p className="info-section__link">({error.msg})</p>}
         </div>
       </div>
     </div>
