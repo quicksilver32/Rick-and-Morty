@@ -15,8 +15,12 @@ export const useLoadAdditionalInfo = (id, type) => {
 
   useEffect(() => {
     setLoading(true);
+    let isCancelled = false;
     getItems(id, type)
       .then((result) => {
+        if (isCancelled) {
+          return;
+        }
         setInfo(result);
         return result[mapDict[type][0]].map((item) => getIdFromURL(item));
       })
@@ -35,6 +39,9 @@ export const useLoadAdditionalInfo = (id, type) => {
         setError({ status: true, msg: err.message });
         setLoading(false);
       });
+    return () => {
+      isCancelled = true;
+    };
   }, [id]);
 
   return { loading, info, error, additionalData };

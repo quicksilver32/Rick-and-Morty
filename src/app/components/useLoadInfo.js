@@ -7,6 +7,7 @@ export const useLoadInfo = (searchProps, type) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    let isCancelled = false;
     setLoading(true);
     let fetchUrl = "";
     if (Object.keys(searchProps).length !== 0) {
@@ -19,6 +20,9 @@ export const useLoadInfo = (searchProps, type) => {
     }
     getItems(fetchUrl, type)
       .then((result) => {
+        if (isCancelled) {
+          return;
+        }
         setError({ status: false, msg: "" });
         setData(result);
         setLoading(false);
@@ -28,6 +32,9 @@ export const useLoadInfo = (searchProps, type) => {
         setError({ status: true, msg: err.message });
         setLoading(false);
       });
+    return () => {
+      isCancelled = true;
+    };
   }, [searchProps, type]);
 
   return { loading, data, error };
