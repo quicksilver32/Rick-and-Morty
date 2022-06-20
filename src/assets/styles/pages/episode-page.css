@@ -1,4 +1,4 @@
-.main {
+.main-episode {
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -34,7 +34,7 @@
 
 .disabled {
     color: gray;
-    pointer-events:none;
+    pointer-events: none;
 }
 
 .episode-info {

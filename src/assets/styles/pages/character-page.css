@@ -1,4 +1,4 @@
-.main {
+.main-character {
     display: grid;
     gap: 20px;
     grid-template-columns: 5fr 7fr;
@@ -35,47 +35,21 @@
     margin-bottom: 20px;
 }
 
-.info-section__status {
-    display: flex;
-    align-items: center;
-    text-transform: capitalize;
-    margin-bottom: 10px;
-}
-
-.status-icon {
-    height: 0.5em;
-    width: 0.5em;
-    margin-right: 0.375em;
-    border-radius: 50%;
-}
-
-.alive {
-    background: var(--alive-color);
-}
-
-.dead {
-    background: var(--dead-color);
-}
-
-.unknown {
-    background: var(--unknown-color);
-}
-
 .info-section__image {
     border-radius: 18px;
 }
 
-.info-section__title {
+.info-section-page__title {
     color: #484848;
     font-size: 0.75em;
 }
 
-.info-section__link {
+.info-section-page__link {
     color: black;
     text-decoration: none;
 }
 
-.info-section__link:hover {
+.info-section-page__link:hover {
     color: #F2E96B;
 }
 

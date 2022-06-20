@@ -2,7 +2,7 @@ footer {
     height: 140px;
     background: linear-gradient(180deg, rgba(242, 233, 107, 0) 0%, #F2E96B 100%);
     display: flex;
-    align-items: end;
+    align-items: flex-end;
 }
 
 .footer-container {

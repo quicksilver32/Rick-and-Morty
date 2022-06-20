@@ -16,14 +16,6 @@
     cursor: pointer;
 }
 
-.material-icons.search__icon {
-    line-height: 1.5;
-}
-
-.search__icon:hover {
-    font-weight: bolder;
-}
-
 .search__input {
     font-family: "Krona One", serif;
     width: 100%;

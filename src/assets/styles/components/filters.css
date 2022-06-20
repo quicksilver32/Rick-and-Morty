@@ -1,5 +1,6 @@
 .filter__name {
     margin: 10px 0;
+    text-transform: capitalize;
 }
 
 .filter__name:nth-child(1) {
